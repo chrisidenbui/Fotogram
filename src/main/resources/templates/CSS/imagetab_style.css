@@ -1,0 +1,522 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+html{
+    font-size: 10px;
+    font-family: "Roboto Cn", sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #eee;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nav-bar{
+    position: absolute;
+    left: 30%;
+}
+
+/* Decor dropdown button */
+.dropdown {
+    position: relative;
+    /* margin: 20px 0; */
+    /* padding: 5px; */
+    background-color: black;
+    /* top: 60px; */
+    display: none;
+    top: 20%;
+}
+
+.dropdown li {
+    position: relative;
+    margin: 5px 25px 5px 25px;
+    width: fit-content;
+    display: list-item;
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    position: absolute;
+    top: -10%;
+}
+
+.dropdown li a {
+    color: lightgray;
+    font-size: 17px;
+    line-height: 30px;
+    transition: 0.3s;
+    display: block;
+    position: relative;
+    top: -40%;
+    z-index: 1;
+    background-color: transparent;
+}
+
+#photos a{
+    position: relative;
+    top: 5px;
+}
+
+#graphics a{
+    position: relative;
+    top: 55px;
+}
+
+#animals a{
+    position: relative;
+    top: 3px;
+}
+
+#natures a{
+    position: relative;
+    top: 53px;
+}
+
+#sky a{
+    position: relative;
+    top: 103px;
+}
+
+#family a{
+    position: relative;
+    top: 153px;
+}
+#love a{
+    position: relative;
+    top: 203px;
+}
+
+.nav-bar li:hover .dropdown{
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    display: block;
+}
+
+#search{
+    position: relative;
+    left: 10%;
+}
+
+#login{
+    position: relative;
+    left: 10%;
+}
+
+#signUp{
+    position: relative;
+    left: 10%;
+}
+
+.menu-toggle{
+    position: fixed;
+    top: 2.5rem;
+    left: 2px;
+    color: #eeeeee;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+}
+
+nav{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+.brand{
+    font-size: 3rem;
+    font-weight: 300;
+    transform: translateX(400px);
+    animation: slideIn .5s forwards;
+    position: relative;
+    left: -6%;
+}
+
+.brand span{
+    color: crimson;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul .nav-bar{
+    list-style: none;
+    transform: translateX(100rem);
+    animation: slideIn .5s forwards;
+}
+
+nav ul .nav-bar:nth-child(1){
+    animation-delay: 0s;
+}
+
+nav ul .nav-bar:nth-child(2){
+    animation-delay: .5s;
+}
+
+nav ul .nav-bar:nth-child(3){
+    animation-delay: 1s;
+}
+
+nav ul .nav-bar:nth-child(4){
+    animation-delay: 1.5s;
+}
+
+nav ul li a{
+    padding: 1rem 0;
+    margin: 0 3rem;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+nav ul li a:last-child{
+    margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: crimson;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .5s;
+}
+
+nav ul li a::before{
+    top: 0;
+    transform-origin: left;
+}
+
+nav ul li a::after{
+    bottom: 0;
+    transform-origin: right;
+}
+
+.overlay{
+    background-color: rgba(0,0,0,.95);
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: opacity 650ms;
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+    transform: scaleX(1);
+}
+
+#left_icon:hover,  #right_icon:hover, #heart_icon:hover,
+#download_icon:hover, #share_icon:hover, #expand_icon:hover, .search_icon:hover{
+    background-color: red;
+}
+
+@keyframes slideIn {
+    from{
+
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.left{
+    color: white;
+    font-size: 18px;
+    font-family: "Roboto Cn", sans-serif;
+    position: absolute;
+    top: 20%;
+    left: 2%;
+}
+
+#photo_credit{
+    top: 60%;
+}
+
+#description{
+    top: 180px;
+}
+
+#tag{
+    top: 400px;
+}
+
+.image{
+    position: absolute;
+    top: 17%;
+    left: 23%;
+}
+
+.icon_bar{
+    position: absolute;
+    top: 630px;
+    left: 25%;
+}
+
+#expand_icon{
+    position: absolute;
+    top: 5%;
+    left: 980px;
+}
+
+#share_icon{
+    position: absolute;
+    top: 5%;
+    left: 910px;
+}
+
+#download_icon{
+    position: absolute;
+    top: 5%;
+    left: 840px;
+}
+
+#heart_icon{
+    position: absolute;
+    top: 5%;
+    left: 770px;
+}
+
+
+/* Responsive when screen width is 1220px max */
+@media screen and (max-width: 800px) {
+    .menu-toggle{
+        display: block;
+    }
+
+    #photos a,  #graphics a, #animals a, #natures a, #sky a, #family a, #love a, .brand, .image, .icon_bar, .left{
+        display: none;
+    }
+
+    nav{
+        padding-top: 0;
+        display: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    #search{
+        position: relative;
+        left: 1%;
+    }
+
+    #login{
+        position: relative;
+        left: 1%;
+    }
+
+    #signUp{
+        position: relative;
+        left: 1%;
+    }
+
+    nav ul{
+        flex-direction: column;
+    }
+
+    nav ul li{
+        margin-top: 5rem;
+    }
+
+    nav ul li a{
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .overlay.menu-open,
+    nav.menu-open{
+        display: flex;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.container_icon{
+    position: relative;
+    top: -60px;
+    left: 1100px;
+    width: 180px;
+    display: flex;
+    align-self: center;
+}
+
+.container_icon .icon{
+    width: 200px;
+    stroke-width: 20;
+    stroke: white;
+}
+.container_icon .icon path
+{
+    fill: white;
+    stroke-width: 20;
+    stroke: white;
+}
+.container_icon .heart path
+{
+    fill: transparent;
+    stroke-width: 20;
+    stroke: white;
+}
+.download{
+    position: relative;
+    left: 15%;
+}
+.share{
+    position: relative;
+    left: 30%;
+}
+.expand{
+    position: relative;
+    left: 45%;
+}
+.container_icon .icon.heart path
+{
+    stroke-dasharray: 1580;
+    stroke-dashoffset: 0;
+}
+
+.container_icon .icon.download path
+{
+    stroke-dasharray: 1780;
+    stroke-dashoffset: 0;
+}
+.container_icon .icon.share path
+{
+    stroke-dasharray: 1780;
+    stroke-dashoffset: 1780;
+}
+.container_icon .icon.expand path
+{
+    stroke-dasharray: 1780;
+    stroke-dashoffset: 0;
+}
+
+.container_icon .icon.heart:hover path
+{
+    animation: animated-heart 2s linear forwards;
+
+}
+
+.container_icon .icon.download:hover path
+{
+    animation: animated-download 2s linear forwards;
+}
+
+.container_icon .icon.share:hover path
+{
+    animation: animated-share 2s linear forwards;
+}
+.container_icon .icon.expand:hover path
+{
+    animation: animated-expand 2s linear forwards;
+}
+
+@keyframes animated-heart
+{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+        stroke-dashoffset: 1580;
+    }
+    80%{
+        stroke-dashoffset: 3160;
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 3160;
+        fill: white;
+    }
+
+}
+
+@keyframes animated-download
+{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+        stroke-dashoffset: 1780;
+    }
+    80%{
+        stroke-dashoffset: 3560;
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 3560;
+        fill: white;
+        display:contents;
+    }
+
+}
+
+@keyframes animated-share
+{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+        stroke-dashoffset: 1780;
+    }
+    80%{
+        stroke-dashoffset: 3560;
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 3560;
+        fill: white;
+        display:contents;
+    }
+
+}
+
+@keyframes animated-expand
+{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+        stroke-dashoffset: 1780;
+    }
+    80%{
+        stroke-dashoffset: 3560;
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 3560;
+        fill: white;
+        display:contents;
+    }
+
+}
