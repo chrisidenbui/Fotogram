@@ -1,4 +1,4 @@
-package com.fotogram.hibernate.demo;
+package com.fotogram.demo;
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -10,10 +10,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.fotogram.hibernate.entity.Likes;
-import com.fotogram.hibernate.entity.Post;
-import com.fotogram.hibernate.entity.Tag;
-import com.fotogram.hibernate.entity.UserAcc;
+import com.fotogram.model.Likes;
+import com.fotogram.model.Post;
+import com.fotogram.model.Tag;
+import com.fotogram.model.UserAcc;
 
 public class CreateUserAccDemo {
 

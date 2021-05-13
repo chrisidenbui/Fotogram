@@ -1,4 +1,4 @@
-package com.fotogram.hibernate.entity;
+package com.fotogram.model;
 
 import java.sql.Timestamp;
 
@@ -76,34 +76,47 @@ public class Likes {
     public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
     }
-    
-    
-    
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Likes)) return false;
+
+        Likes likes = (Likes) o;
+
+        return getId() != null ? getId().equals(likes.getId()) : likes.getId() == null;
+    }
+
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        return result;
+        return getId() != null ? getId().hashCode() : 0;
     }
 
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Likes other = (Likes) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
-    }
+    //    @Override
+//    public int hashCode() {
+//        final int prime = 31;
+//        int result = 1;
+//        result = prime * result + ((id == null) ? 0 : id.hashCode());
+//        return result;
+//    }
+//
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj)
+//            return true;
+//        if (obj == null)
+//            return false;
+//        if (getClass() != obj.getClass())
+//            return false;
+//        Likes other = (Likes) obj;
+//        if (id == null) {
+//            if (other.id != null)
+//                return false;
+//        } else if (!id.equals(other.id))
+//            return false;
+//        return true;
+//    }
 
 
 

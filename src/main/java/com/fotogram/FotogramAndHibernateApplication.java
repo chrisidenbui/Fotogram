@@ -1,4 +1,4 @@
-package com.fotogram.hibernate;
+package com.fotogram;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.fotogram.hibernate.entity;
+package com.fotogram.model;
 
 import java.util.ArrayList;
 import java.util.List;

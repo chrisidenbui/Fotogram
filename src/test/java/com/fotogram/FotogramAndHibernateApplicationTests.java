@@ -1,4 +1,4 @@
-package com.fotogram.hibernate;
+package com.fotogram;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

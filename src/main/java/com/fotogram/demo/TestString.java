@@ -1,4 +1,4 @@
-package com.fotogram.hibernate.demo;
+package com.fotogram.demo;
 
 
 public class TestString {

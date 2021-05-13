@@ -1,4 +1,4 @@
-package com.fotogram.hibernate.entity;
+package com.fotogram.model;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
