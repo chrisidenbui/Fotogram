@@ -54,3 +54,15 @@ burger.addEventListener('click', () => {
         burgerclick = false;
     }
 })
+
+
+fetch('http://localhost:63342/templates/HTML/Homepage.html')
+    .then(response => response.json())
+    .then(json => {
+        // for (let i = 0; i < json.length; i++) {
+        //     var name = json[i].name
+        //     document.querySelector("#student").innerHTML += name + "<br/>"
+        //
+        // }
+        console.log(json)
+    })
