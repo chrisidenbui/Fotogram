@@ -4,74 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homepage_style.css">
-    <title> Photographics - Homepage </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/homepage_style.css">
+    <title> Fotogram - Homepage </title>
 </head>
 <body>
-    <section>
-        <nav class="nav-bar">
-            <div class="max-width">
-                <div class="logo">
-                    <a href="">PHOTOGRAPHICS</a>
-                </div> 
-                <ul class="nav-menu">
-                    <li class="main-menu"><a href=""> Home </a></li>
-                    <li class="main-menu"><a href=""> Images </a>
-                        <ul class="dropdown">
-                            <li><a href=""> Photos </a></li>
-                            <li><a href=""> Graphics </a></li>
-                        </ul>
-                    </li>
-                    <li class="main-menu"><a href=""> Topics </a>
-                        <ul class="dropdown">
-                            <li><a href=""> Animals </a></li>
-                            <li><a href=""> Natures </a></li>
-                            <li><a href=""> Sky </a></li>
-                            <li><a href=""> Family </a></li>
-                            <li><a href=""> Love </a></li>
-                        </ul>
-                    </li>
-                    <li class="main-menu"><a href=""> Collections </a></li>
-                    <li class="main-menu"><a href=""> Explore </a></li>
-                </ul>
-                <div class="side-nav">
-                    <div class="search">
-                        <input type="search" placeholder="Search for high-resolution images">
-                        <div id="holder"></div>
-                    </div>
-                    <ul class="login-nav">
-                        <li class="join"><a href=""> Login </a></li>
-                        <li class="separate"></li>
-                        <li class="join"><a href=""> Sign up </a></li>
+    <nav class="nav-bar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="../HTML/Homepage.html">Fotogram</a>
+            </div> 
+            <ul class="nav-menu">
+                <li class="main-menu"><a href="../HTML/Homepage.html"> Home </a></li>
+                <li class="main-menu"><a href="../HTML/imagetab.html"> Images </a>
+                    <ul class="dropdown">
+                        <li><a class="dropdown-item" href=""> Photos </a></li>
+                        <li><a class="dropdown-item" href=""> Graphics </a></li>
                     </ul>
-                    <div class="menu-button">
-                        <div class="burger">
-                            <div id="line1"></div>
-                            <div id="line2"></div>
-                            <div id="line3"></div>
-                        </div>
+                </li>
+                <li class="main-menu"><a href=""> Collections </a>
+                    <ul class="dropdown">
+                        <li><a class="dropdown-item" href=""> Animals </a></li>
+                        <li><a class="dropdown-item" href=""> Natures </a></li>
+                        <li><a class="dropdown-item" href=""> Sky </a></li>
+                        <li><a class="dropdown-item" href=""> Family </a></li>
+                        <li><a class="dropdown-item" href=""> Love </a></li>
+                    </ul>
+                </li>
+                <li class="main-menu"><a href=""> Explore </a></li>
+                <li class="main-menu"><a href=""> About Us </a></li>
+            </ul>
+            <div class="side-nav">
+                <div class="search">
+                    <input type="search" placeholder="Search for high-resolution images">
+                    <div id="holder"></div>
+                </div>
+                <ul class="login-nav">
+                    <li class="join"><a href=""> Login </a></li>
+                    <li class="separate"></li>
+                    <li class="join"><a href=""> Sign up </a></li>
+                </ul>
+                <div class="menu-button">
+                    <div class="burger">
+                        <div id="line1"></div>
+                        <div id="line2"></div>
+                        <div id="line3"></div>
                     </div>
                 </div>
             </div>
-        </nav>
-        <div class="photo-slider">
-            <img src="../Images/sky-5375005.jpg" class="main_image" id="main_image">
-            <div class="tagline">"a travers forêt ou alpage"</div>
-            <div class="info">
-                Photo of the day by: "ttfatty1012" <br>
-                Tag: forest, mystical, gloomy
+        </div>
+    </nav>
+    <header id="demo" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../Images/sky-5375005.jpg">
+                <!-- <div class="carousel-caption">"a travers forêt ou alpage"</div>
+                <div class="carousel-caption">
+                    Photo of the day by: "ttfatty1012" <br>
+                    Tag: forest, mystical, gloomy
+                </div>
+                <div class="carousel-caption">View Image</div> -->
             </div>
-            <div class="view">View Image</div>
-            <div class = "pager">
-                <button class="btn" id="#prevBtn" onclick="prevImg()">Prev </button>
-                <span class="dot active" id="dot1"></span>
-                <span class="dot" id="dot2"></span>
-                <span class="dot" id="dot3"></span>
-                <span class="dot" id="dot4"></span>
-                <button class="btn" onclick="nextImg()"> Next</button>
+            <div class="carousel-item">
+                <img src="../Images/mario.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="../Images/kaysar.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="../Images/shawn.jpg">
             </div>
         </div>
-    </section>
+        <!-- Indicators and Left/Right control buttons -->
+        <div class="pager">
+            <a class="carousel-control-prev" href="#demo" data-slide="prev"> Prev </a>
+            <div class="carousel-indicators">
+                <span data-target="#demo" class="dot active" data-slide-to="0"></span>
+                <span data-target="#demo" class="dot" data-slide-to="1"></span>
+                <span data-target="#demo" class="dot" data-slide-to="2"></span>
+                <span data-target="#demo" class="dot" data-slide-to="3"></span>
+            </div>
+            <a class="carousel-control-next" href="#demo" data-slide="next"> Next </a>
+        </div>
+    </header>
     <main>
         <div class="gallery" id="gallery">
             <div class="box">
@@ -113,6 +131,14 @@
             </div>
         </div>
     </main>
-    <script src="homepage_script.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../JS/homepage_script.js"></script>
 </body>
 </html>

@@ -1,5 +1,11 @@
 var open = document.getElementById('hamburger');
 var changeIcon = true;
+document.addEventListener('DOMContentLoaded', () => {
+    const params = (new URL(document.location)).searchParams;
+    let image_src = document.location.search.replace(/^.*?\=/,'')
+    let main_image = document.querySelector('.image_tab > img');
+    main_image.src = image_src
+})
 
 open.addEventListener("click", function(){
 
