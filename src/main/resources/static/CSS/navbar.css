@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body { background-color: black; }
+a { text-decoration: none !important; }
+
+/* Arrange and decor the nav bar */
+.nav-bar {
+    position: fixed;
+    /* position: relative; */
+    width: 100%;
+    /* padding: 30px; */
+    font-family: monospace;
+    color: white;
+    transition: all 0.3s linear;
+    z-index: 10; /* higher priority */
+}
+.max-width {
+    padding: 15px 80px;
+    transition: .3s;
+}
+.nav-bar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Transparent navbar */
+.nav-bar.sticky .max-width{
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.781),  rgba(0, 0, 0, 0.544), rgba(0, 0, 0, 0.344), rgba(0, 0, 0, 0.020));
+    transition: all 0.3s linear;
+    /* background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255, 0.685), rgb(255, 255, 255, 0.338), rgb(255, 255, 255, 0.103)); */
+}
+/* ---------------------------------------------------------------------------- */
+
+/* Decor and effect for the logo */
+.logo a {
+    position: relative;
+    padding: 10px;
+    color: white;
+    font-size: 30px;
+    /* font-weight: 600; */
+    font-family: 'Special Elite', cursive;
+    /* font-family: 'Nosifer', cursive; */
+    /* font-family: 'Fredericka the Great', cursive; */
+    transition: .3s;
+}
+.logo a::before {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    top: 0;
+    left: 0;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition: .5s;
+    opacity: 0;
+}
+.logo a:hover::before {
+    width: 102%;
+    height: 105%;
+    opacity: 1;
+    transition: .5s;
+}
+.logo a::after {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transition: .5s;
+    opacity: 0;
+}
+.logo a:hover::after {
+    width: 102%;
+    height: 105%;
+    opacity: 1;
+    transition: .5s;
+}
+/* ---------------------------------------------------------------------------- */
+
+/* Decor the center nav menu button */
+.nav-menu { position: relative; }
+.nav-menu li {
+    list-style: none;
+    display: inline-block;
+}
+.main-menu {
+    margin: 10px 25px 0 25px;
+    transition: 0.5s;
+}
+.main-menu > a {
+    display: block;
+    position: relative;
+    font-family: 'Amatic SC', cursive;
+    color: lightgray;
+    margin: 0 0 10px 0;
+    font-size: 25px;
+    font-weight: 800;
+}
+.main-menu > a:hover {
+    color: white;
+}
+.main-menu > a:before {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    left: 0;
+    top: 0;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    opacity: 0;
+    transition: 0.5s;
+}
+.main-menu > a:hover:before {
+    opacity: 1;
+    left: -10px;
+    top: -5px;
+}
+.main-menu > a:after{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    opacity: 0;
+    transition: 0.5s;
+}
+.main-menu > a:hover:after {
+    opacity: 1;
+    right: -10px;
+    bottom: -5px;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+/* Decor dropdown button */
+.dropdown {
+    position: absolute;
+    background-color: black;
+    display: none;
+}
+.dropdown li {
+    width: fit-content;
+    display: list-item;
+    display: block;
+    text-decoration: none;
+}
+.dropdown li a {
+    color: lightgray;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    line-height: 30px;
+    transition: 0.3s;
+}
+.nav-menu li:hover .dropdown {
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    display: block;
+}
+.dropdown li a:hover {
+    background-color: transparent !important;
+    color: white;
+}
+/* ---------------------------------------------------------------------------- */
+
+/* Search bar and icon */
+.search {
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+}
+.search input {
+    outline: none;
+    color: lightgray;
+    font-size: 20px;
+    font-family: 'Patrick Hand', cursive;
+    letter-spacing: .5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+    border: 2px solid lightgray;
+    padding: 0 0 0 20px;
+    background-color: transparent;
+    transition: .3s;
+}
+/* Create search icon */
+.search #holder {
+    position: absolute;
+    background-color: lightgray;
+    height: 12px;
+    width: 2px;
+    transform: rotate(-50deg);
+    right: -1px;
+    bottom: -5px
+}
+.search input::placeholder { opacity: 0; }
+.search input:focus::placeholder {
+    opacity: 1;
+    font-size: 18px;
+    font-family: 'Patrick Hand', cursive;
+    color: gray;
+}
+.search input:focus {
+    border: 2px solid white;
+    height: 40px;
+    width: 450px;
+    cursor: text;
+    transition: .5s;
+}
+.search input::-webkit-search-cancel-button {
+    /* left: 50px; */
+    display: none;
+    /* position: relative; */
+}
+.search input:focus::-webkit-search-cancel-button {
+    left: -20px;
+    background: white;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+/* Decor the login and join button */
+.nav-bar .side-nav .login-nav,
+.nav-bar .side-nav .login-nav li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+.nav-bar .side-nav .login-nav li a{
+    font-family: 'Amatic SC', cursive;
+    color: lightgray;
+    font-size: 25px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    transition: 0.5s;
+    padding: 10px;
+}
+.nav-bar .side-nav .login-nav .separate {
+    padding: 0;
+    margin: 0 10px;
+    height: 19px;
+    width: 2px;
+    background-color: lightgray;
+}
+.nav-bar .side-nav .login-nav li a:hover { color: white; }
+.nav-bar .side-nav .login-nav > li a:before{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    left: 5px;
+    top: 5px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    opacity: 0;
+    transition: 0.5s;
+}
+.nav-bar .side-nav .login-nav > li a:hover:before{
+    opacity: 1;
+    top: -4px;
+    left: 0px;
+}
+.nav-bar .side-nav .login-nav > li a:after{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    bottom: 5px;
+    right: 5px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    opacity: 0;
+    transition: 0.5s;
+}
+.nav-bar .side-nav .login-nav > li a:hover:after{
+    opacity: 1;
+    bottom: -5px;
+    right: -1px;
+}
+/* ---------------------------------------------------------------------------- */
+
+/* Burger button when screen is minimized */
+.burger div {
+    display: none;
+    background-color: gray;
+    border-radius: 20px;
+}
+.burger #line1 {
+    width: 30px;
+    height: 2px;
+    transform: translateY(-10px);
+    transition: 0.5s;
+}
+.burger #line2 {
+    width: 15px;
+    height: 2px;
+    transform: translate(20px,-5px);
+    transition: .5s;
+}
+.burger #line3 {
+    width: 20px;
+    height: 2px;
+    transform: translateX(10px);
+    transition: 0.5s;
+}
+/* ---------------------------------------------------------------------------- */
+
+/* Responsive for navbar components */
+@media screen and (max-width: 1170px) {
+    .search input:focus {
+        font-size: 15px;
+        height: 40px;
+        width: 300px;
+        transition: .3s;
+    }
+}
+/* Responsive when screen width is 1220px max */
+@media screen and (max-width: 1220px) {
+    .max-width {
+        padding: 15px 50px;
+        transition: .3s;
+    }
+    .logo a {
+        font-size: 25px;
+        transition: .3s;
+    }
+    .nav-bar .side-nav .login-nav li a{
+        font-size: 20px;
+        transition: .3s;
+    }
+    .search input {
+        font-size: 20px;
+        height: 25px;
+        width: 25px;
+        padding: 0 0 0 15px;
+    }
+    .search input:focus {
+        font-size: 15px;
+        height: 30px;
+        width: 250px;
+        transition: .3s;
+    }
+    .search input:focus::placeholder {
+        opacity: 1;
+        font-size: 15px;
+    }
+    
+}
+/* Responsive when screen width is 1680px max */
+@media screen and (max-width: 1680px) {
+    /* Hide navmenu when burger menu exists */
+    .nav-menu > .main-menu,
+    .nav-menu.display > .main-menu .dropdown { display: none; }
+    .menu-button {
+        display: inline-flex;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .burger div { display: block; }
+    .menu-button:hover > .burger div {
+        background-color: white;
+    }
+    /* Open burger menu, display menu cancel button */
+    .menu-button.open { padding: 10px; }
+    .menu-button.open #line2 {
+        transform: translateX(50px);
+        background: transparent;
+    }
+    .menu-button.open #line1 {
+        width: 30px;
+        background-color: white;
+        transform: rotate(-45deg) translate(7px, 3px);
+    }
+    .menu-button.open #line3 {
+        width: 30px;
+        background-color: white;
+        transform: rotate(45deg) translate(0, -10px);
+    }
+    /* Show navmenu when click on burger menu */
+    .nav-menu.display {
+        position: fixed;
+        text-align: center;
+        background-color: black;
+        padding: 15px 50px;
+        height: fit-content;
+        top: 50px;
+        right: 80px;
+        transition: .5s;
+    }
+    .nav-menu.display > .main-menu { display: list-item; }
+    .nav-menu.display > .main-menu a { font-size: 15px; }
+}

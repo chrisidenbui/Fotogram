@@ -27,6 +27,12 @@ public class User {
     
     @Column(name = "user_name")
     private String userName;
+
+    @Column(name="first_name")
+    private String firstName;
+
+    @Column(name="last_name")
+    private String lastName;
     
     @Column(name = "email")
     private String email;
@@ -73,6 +79,18 @@ public class User {
         this.lastLoginTime = lastLonginTime;
     }
 
+    public User(String userName, String firstName, String lastName, String email, String password, LocalDate dob,
+                String bio, String avatarUrl, Timestamp lastLonginTime) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.dob = dob;
+        this.bio = bio;
+        this.avatarUrl = avatarUrl;
+        this.lastLoginTime = lastLonginTime;
+    }
 
     // GETTERS AND SETTERS
     public Long getUserId() {
@@ -89,6 +107,22 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -154,30 +188,20 @@ public class User {
     public void setLikes(Set<Likes> likes) {
         this.likes = likes;
     }
-    
+
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((userId == null) ? 0 : userId.hashCode());
-        return result;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        return getUserId() != null ? getUserId().equals(user.getUserId()) : user.getUserId() == null;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        User other = (User) obj;
-        if (userId == null) {
-            if (other.userId != null)
-                return false;
-        } else if (!userId.equals(other.userId))
-            return false;
-        return true;
+    public int hashCode() {
+        return getUserId() != null ? getUserId().hashCode() : 0;
     }
 
     // convenient methods
@@ -194,8 +218,19 @@ public class User {
 
     @Override
     public String toString() {
-        return "UserAcc [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password=" + password
-                + ", dob=" + dob + ", bio=" + bio + ", avatarUrl=" + avatarUrl + ", lastLoginTime=" + lastLoginTime
-                + ", postList=" + postList + ", likes=" + likes + "]";
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", dob=" + dob +
+                ", bio='" + bio + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", lastLoginTime=" + lastLoginTime +
+                ", postList=" + postList +
+                ", likes=" + likes +
+                '}';
     }
 }

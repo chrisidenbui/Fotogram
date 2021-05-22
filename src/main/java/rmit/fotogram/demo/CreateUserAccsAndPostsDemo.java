@@ -16,7 +16,7 @@ public class CreateUserAccsAndPostsDemo {
 
     public static void main(String[] args) {
         // create session factory
-        SessionFactory factory = new Configuration().configure("hibernate.config.xml")
+        SessionFactory factory = new Configuration().configure()
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Post.class)
                 .addAnnotatedClass(Tag.class)
@@ -32,6 +32,8 @@ public class CreateUserAccsAndPostsDemo {
             // create and add Nhan into 'users' list
             users.add(new User(
                     "nhan",
+                    "Nhàn",
+                    "Nguyễn",
                     "nhan@nhan.com",
                     "nhanpass",
                     LocalDate.parse("1999-08-08"),
@@ -42,6 +44,7 @@ public class CreateUserAccsAndPostsDemo {
             // create and add Chau into 'users' list
             users.add(new User(
                     "chau",
+                    "Châu","Nguyễn",
                     "chau@chau.net",
                     "chaupass",
                     LocalDate.parse("2000-03-03"),
@@ -53,6 +56,8 @@ public class CreateUserAccsAndPostsDemo {
             // create and add Triet into 'users' list
             users.add(new User(
                     "triet",
+                    "Chrisiden",
+                    "Bùi",
                     "triet@triet.lol",
                     "trietpass",
                     LocalDate.parse("1999-10-10"),
@@ -63,6 +68,8 @@ public class CreateUserAccsAndPostsDemo {
             // create and add Minh into 'users' list
             users.add(new User(
                     "minh",
+                    "Minh",
+                    "Mai",
                     "minh@minh.loto",
                     "minhpass",
                     LocalDate.parse("1999-08-12"),

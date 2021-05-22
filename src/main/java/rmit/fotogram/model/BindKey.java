@@ -60,35 +60,4 @@ public class BindKey implements Serializable {
         result = 31 * result + (getTagId() != null ? getTagId().hashCode() : 0);
         return result;
     }
-
-    //    @Override
-//    public int hashCode() {
-//        final int prime = 31;
-//        int result = 1;
-//        result = prime * result + ((postId == null) ? 0 : postId.hashCode());
-//        result = prime * result + ((tagId == null) ? 0 : tagId.hashCode());
-//        return result;
-//    }
-//
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj)
-//            return true;
-//        if (obj == null)
-//            return false;
-//        if (getClass() != obj.getClass())
-//            return false;
-//        BindKey other = (BindKey) obj;
-//        if (postId == null) {
-//            if (other.postId != null)
-//                return false;
-//        } else if (!postId.equals(other.postId))
-//            return false;
-//        if (tagId == null) {
-//            if (other.tagId != null)
-//                return false;
-//        } else if (!tagId.equals(other.tagId))
-//            return false;
-//        return true;
-//    }
 }
