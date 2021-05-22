@@ -30,6 +30,10 @@ public class Bind {
         // default constructor
     }
 
+    public Bind(Post post, Tag tag) {
+        this.post = post;
+        this.tag = tag;
+    }
 
     // GETTERS AND SETTERS
     public BindKey getId() {

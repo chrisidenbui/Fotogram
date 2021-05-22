@@ -33,7 +33,7 @@ public class Post {
     private String photoUrl;
     
     @Column(name = "creation_date")
-    private Timestamp createDate; 
+    private Timestamp createdDate;
     
     
     @Column(name = "photo_location")
@@ -48,27 +48,30 @@ public class Post {
     @OneToMany(mappedBy = "likeAtPost")       // 'likeAtPost' is the property of 'Likes' class.
     private Set<Likes> likes = new HashSet<>();
 
-    // Post and Tag
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "bind",
-            joinColumns = @JoinColumn(name = "post_id"),
-            inverseJoinColumns = @JoinColumn(name = "tag_id"))
-    private List<Tag> tags;
-    
+//    // Post and Tag
+//    @ManyToMany(fetch = FetchType.LAZY,
+//            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+//    @JoinTable(name = "bind",
+//            joinColumns = @JoinColumn(name = "post_id"),
+//            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+//    private List<Tag> tags;
+
+    // Post and Bind
+    @OneToMany(mappedBy = "post")
+    private Set<Bind> bind = new HashSet<>();
     
     // CONSTRUCTORS
     public Post() {
         // default constructor
     }
-    
-    public Post(String photoUrl, Timestamp createDate, String photoLocation) {
+
+    public Post(String photoUrl, Timestamp createdDate, String photoLocation) {
         this.photoUrl = photoUrl;
-        this.createDate = createDate;
+        this.createdDate = createdDate;
         this.photoLocation = photoLocation;
     }
 
-    // getters and setters
+    // GETTERS AND SETTERS
     public Long getPostId() {
         return postId;
     }
@@ -85,12 +88,12 @@ public class Post {
         this.photoUrl = photoUrl;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
     public String getPhotoLocation() {
@@ -101,15 +104,6 @@ public class Post {
         this.photoLocation = photoLocation;
     }
 
-    
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
-    }
-    
     public User getPostedUser() {
         return postedUser;
     }
@@ -117,7 +111,7 @@ public class Post {
     public void setPostedUser(User postedUser) {
         this.postedUser = postedUser;
     }
-    
+
     public Set<Likes> getLikes() {
         return likes;
     }
@@ -125,49 +119,49 @@ public class Post {
     public void setLikes(Set<Likes> likes) {
         this.likes = likes;
     }
-    
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((postId == null) ? 0 : postId.hashCode());
-        return result;
+
+    public Set<Bind> getBind() {
+        return bind;
+    }
+
+    public void setBind(Set<Bind> bind) {
+        this.bind = bind;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Post other = (Post) obj;
-        if (postId == null) {
-            if (other.postId != null)
-                return false;
-        } else if (!postId.equals(other.postId))
-            return false;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Post)) return false;
+
+        Post post = (Post) o;
+
+        return getPostId() != null ? getPostId().equals(post.getPostId()) : post.getPostId() == null;
     }
-    
+
+    @Override
+    public int hashCode() {
+        return getPostId() != null ? getPostId().hashCode() : 0;
+    }
+
     @Override
     public String toString() {
-        return "Post [postId=" + postId + ", photoUrl=" + photoUrl + ", createDate=" + createDate + ", photoLocation="
-                + photoLocation + ", postedUser=" + postedUser + ", likes=" + likes + ", tags=" + tags
-                + ", getPostId()=" + getPostId() + ", getPhotoUrl()=" + getPhotoUrl() + ", getCreateDate()="
-                + getCreateDate() + ", getPhotoLocation()=" + getPhotoLocation() + ", getTags()=" + getTags()
-                + ", getPostedUser()=" + getPostedUser() + ", getLikes()=" + getLikes() + ", getClass()=" + getClass()
-                + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+        return "Post{" +
+                "postId=" + postId +
+                ", photoUrl='" + photoUrl + '\'' +
+                ", createdDate=" + createdDate +
+                ", photoLocation='" + photoLocation + '\'' +
+                ", postedUser=" + postedUser +
+                ", likes=" + likes +
+                ", bind=" + bind +
+                '}';
     }
-    
-    // convenient methods
-    public void addTag(Tag newTag) {
-        if (tags == null) {
-            tags = new ArrayList<>();
-        }
-        
-        tags.add(newTag);
-    }
+    //    // convenient methods
+//    public void addTag(Tag newTag) {
+//        if (tags == null) {
+//            tags = new ArrayList<>();
+//        }
+//
+//        tags.add(newTag);
+//    }
 
 }

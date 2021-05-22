@@ -19,6 +19,7 @@
             </thead>
 
             <tbody>
+                <!--/*@thymesVar id="listOfUsers" type=""*/-->
                 <tr th:each="user : ${listOfUsers}">
                     <td th:text="${user.userId}"></td>
                     <td th:text="${user.userName}"></td>

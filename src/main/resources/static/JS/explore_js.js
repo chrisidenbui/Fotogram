@@ -31,4 +31,3 @@ function setDot(i){
     var new_active_dot = document.getElementById(dot_id);
     new_active_dot.classList.add('active');
 }
-
