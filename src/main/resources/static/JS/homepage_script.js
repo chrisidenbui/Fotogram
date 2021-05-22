@@ -1,43 +1,8 @@
-var img = document.getElementById('main_image');
-var album = ['sky-5375005.jpg', 'kaysar.jpg', 'shawn.jpg', 'mario.jpg'];
-var i = 0;
-var active_dot = 1;
-
-function prevImg() {
-    document.getElementById('dot'+active_dot).classList.remove('active')
-    if (i <= 0) {
-        i = album.length;
-    }
-    i--;
-    setDot(i);
-    var s = '../Images/' + album[i];
-    img.src = s;
-}
-
-function nextImg() {
-    document.getElementById('dot'+active_dot).classList.remove('active')
-    if (i >= album.length - 1) {
-        i = -1;
-    }
-    i++;
-    setDot(i);
-    var s = '../Images/' + album[i];
-    img.src = s;
-}
-
-function setDot(i){
-    active_dot = i + 1;
-    var dot_id = 'dot' + active_dot;
-    var new_active_dot = document.getElementById(dot_id);
-    new_active_dot.classList.add('active');
-}
-
 // Transparent navbar when scroll window down
 window.addEventListener("scroll", () => {
-    var header = document.querySelector("section");
+    var header = document.querySelector(".nav-bar");
     header.classList.toggle("sticky", window.scrollY);
 })
-
 // Burger menu
 const burger = document.querySelector('.menu-button');
 const navmenu = document.querySelector('.nav-menu');
@@ -55,15 +20,67 @@ burger.addEventListener('click', () => {
     }
 })
 
+//Fetch API and put in Post class
+class Post {
+    constructor(img_src, download_urls, username, likes, tags, description) {
+        this._img_src = img_src;
+        this._download_urls = download_urls;
+        this._username = username;
+        this._likes = likes;
+        this._tags = tags;
+        this._description = description;
+    }
 
-// fetch('http://localhost:63342/templates/HTML/Homepage.html')
-fetch('http://localhost:63342/Fotogram/hibernate/templates/HTML/Homepage.html')
+    get img_src() {
+        return this._img_src;
+    }
+
+    get download_urls() {
+        return this._download_urls;
+    }
+
+    get username() {
+        return this._username;
+    }
+
+    get likes() {
+        return this._likes;
+    }
+
+    get tags() {
+        return this._tags;
+    }
+
+    get description() {
+        return this._description;
+    }
+}
+
+fetch('http://localhost:8080/posts')
     .then(response => response.json())
     .then(json => {
-        // for (let i = 0; i < json.length; i++) {
-        //     var name = json[i].name
-        //     document.querySelector("#student").innerHTML += name + "<br/>"
-        //
-        // }
-        console.log(json)
+        console.log(json);
+        for (let j = 0; j < json.length; j++) {
+            let currResult = json[j];
+            let newPost = new Post(currResult.urls, currResult.username, currResult.likes, tagList, currResult.description);
+            postList.push(newPost);
+        }
     })
+
+//Function to open Image Pane
+const all = document.querySelectorAll('.box > img');
+for (let a = 0; a < all.length; a++) {
+    all[a].addEventListener("click",function (){
+        let src = all[a].src;
+        // localStorage.setItem('SRC', src);
+        window.document.location = './imagetab.html' + '?image_src=' + src;
+    })
+}
+
+//Function to display posts
+function displayPosts() {
+    const all2 = document.querySelectorAll('.box > img');
+    for (let a = 0; a < all2.length; a++) {
+        all2[a].src = postList[a];
+    }
+}

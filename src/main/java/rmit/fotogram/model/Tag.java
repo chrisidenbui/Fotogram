@@ -1,19 +1,10 @@
 package rmit.fotogram.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "tag")
@@ -25,28 +16,27 @@ public class Tag {
     
     @Column(name = "tag_name")
     private String tagName;
-    
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "bind",
-            joinColumns = @JoinColumn(name = "tag_id"),
-            inverseJoinColumns = @JoinColumn(name = "post_id")
-            )
-    private List<Post> posts;
-    
-    
-    // constructors
+
+
+    private Timestamp creationDate;
+
+    // Tag and Bind
+    @OneToMany(mappedBy = "tag")
+    private Set<Bind> bind = new HashSet<>();
+
+    // CONSTRUCTORS
     public Tag() {
         // default constructor
     }
-    
-    public Tag(String tagName) {
-//        this.tagName = tagName;
-        this.tagName = capitalize(tagName);
+
+    public Tag(String tagName, Timestamp creationDate) {
+        this.tagName = tagName;
+//        this.tagName = capitalize(tagName); // work OK.
+        this.creationDate = creationDate;
     }
 
-    // getters and setters
-    
+    // GETTERS AND SETTERS
+
     public Long getId() {
         return id;
     }
@@ -54,32 +44,39 @@ public class Tag {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public String getTagName() {
         return tagName;
     }
 
     public void setTagName(String tagName) {
-//        this.tagName = tagName;
-        this.tagName = capitalize(tagName);
+        this.tagName = tagName;
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public Set<Bind> getBind() {
+        return bind;
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
+    public void setBind(Set<Bind> bind) {
+        this.bind = bind;
     }
-    
-    
-    // convenient methods
-    public void addPost(Post newPost) {
-        if (posts == null) {
-            posts = new ArrayList<>();
-        }
-        posts.add(newPost);
+
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "id=" + id +
+                ", tagName='" + tagName + '\'' +
+                ", bind=" + bind +
+                '}';
     }
+
+    //    // convenient methods
+//    public void addPost(Post newPost) {
+//        if (posts == null) {
+//            posts = new ArrayList<>();
+//        }
+//        posts.add(newPost);
+//    }
     
 //    public void capitalize() {
 //        this.tagName = this.tagName.substring(0,1).toUpperCase() // capitalize first letter.
@@ -89,11 +86,5 @@ public class Tag {
     public String capitalize(String s) {
         return s.substring(0,1).toUpperCase() + s.substring(1).toLowerCase();
     }
-    
-    @Override
-    public String toString() {
-        return "Tag [id=" + id + ", tagName=" + tagName + ", posts=" + posts + "]";
-    }
-    
-    
+
 }

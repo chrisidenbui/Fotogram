@@ -24,6 +24,14 @@ public class TagServiceImplement implements TagService {
     }
 
     @Override
+    public Tag findByName(String tagName) {
+        // TODO: implement search by tag name
+
+//        return tagRepository.findByName(tagName);
+        return null;
+    }
+
+    @Override
     public Tag findById(Long id) {
         Tag tag;
         Optional<Tag> result = tagRepository.findById(id);
