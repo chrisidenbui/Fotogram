@@ -68,13 +68,21 @@ fetch('http://localhost:8080/posts')
     })
 
 //Function to open Image Pane
-const all = document.querySelectorAll('.box > img');
-for (let a = 0; a < all.length; a++) {
-    all[a].addEventListener("click",function (){
-        let src = all[a].src;
-        // localStorage.setItem('SRC', src);
-        window.document.location = './imagetab.html' + '?image_src=' + src;
-    })
+const all_post = document.querySelectorAll('.box > img');
+openImageTab(all_post);
+
+const all_carousel = document.querySelectorAll('.carousel-item > img');
+openImageTab(all_carousel);
+//General function of opening Image Tab
+
+function openImageTab(all){
+    for (let a = 0; a < all.length; a++) {
+        all[a].addEventListener("click",function (){
+            let src = all[a].src;
+            // localStorage.setItem('SRC', src);
+            window.document.location = './imagetab.html' + '?image_src=' + src;
+        })
+    }
 }
 
 //Function to display posts
