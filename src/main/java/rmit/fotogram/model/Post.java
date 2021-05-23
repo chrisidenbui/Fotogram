@@ -1,24 +1,10 @@
 package rmit.fotogram.model;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "post")
@@ -40,12 +26,14 @@ public class Post {
     private String photoLocation;
     
     // Post and UserAcc
-    @ManyToOne(cascade = CascadeType.ALL)   // delete the user, related post also was deleted.
+    @ManyToOne(cascade = CascadeType.ALL, // delete the user, related post also was deleted.
+            fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")   // 'user_id' is a column of table 'Post'.
     private User postedUser;
     
     // Post and Likes
-    @OneToMany(mappedBy = "likeAtPost")       // 'likeAtPost' is the property of 'Likes' class.
+    @OneToMany(mappedBy = "likeAtPost",
+            fetch = FetchType.LAZY)       // 'likeAtPost' is the property of 'Likes' class.
     private Set<Likes> likes = new HashSet<>();
 
 //    // Post and Tag
@@ -155,6 +143,7 @@ public class Post {
                 ", bind=" + bind +
                 '}';
     }
+
     //    // convenient methods
 //    public void addTag(Tag newTag) {
 //        if (tags == null) {

@@ -12,7 +12,8 @@ public class Likes {
     private LikesKey id;
     
     // Likes and UserAcc        
-    @ManyToOne(cascade = CascadeType.ALL)   // delete an user, associated like also was deleted.
+    @ManyToOne(cascade = CascadeType.ALL,   // delete an user, associated like also was deleted.
+                fetch = FetchType.LAZY)
     @MapsId("userId")       // 'userId' is the property of UserAcc class.
     @JoinColumn(name = "user_id")   // 'user_id' is a column of table 'Likes'.
     private User liker;  // Like này của User nào.

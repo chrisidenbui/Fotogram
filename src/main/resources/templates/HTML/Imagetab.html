@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,56 +7,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/navbar.css">
-    <link rel="stylesheet" href="../CSS/imagetab_style.css">
-    <title> Photographics - Homepage </title>
+
+<!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
+<!--    <link rel="stylesheet" href="../CSS/imagetab_style.css">-->
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}">
+    <link rel="stylesheet" th:href="@{/CSS/imagetab_style.css}">
+
+    <title> Photographics - Image </title>
 </head>
 <body>
-    <nav class="nav-bar">
-        <div class="max-width">
-            <div class="logo">
-                <a href="Homepage.html">Fotogram</a>
-            </div>
-            <ul class="nav-menu">
-                <li class="main-menu"><a href="Homepage.html"> Home </a></li>
-                <li class="main-menu"><a href="imagetab.html"> Images </a>
-                    <ul class="dropdown">
-                        <li><a class="dropdown-item" href=""> Photos </a></li>
-                        <li><a class="dropdown-item" href=""> Graphics </a></li>
-                    </ul>
-                </li>
-                <li class="main-menu"><a href=""> Collections </a>
-                    <ul class="dropdown">
-                        <li><a class="dropdown-item" href=""> Animals </a></li>
-                        <li><a class="dropdown-item" href=""> Natures </a></li>
-                        <li><a class="dropdown-item" href=""> Sky </a></li>
-                        <li><a class="dropdown-item" href=""> Family </a></li>
-                        <li><a class="dropdown-item" href=""> Love </a></li>
-                    </ul>
-                </li>
-                <li class="main-menu"><a href=""> Explore </a></li>
-                <li class="main-menu"><a href=""> About Us </a></li>
-            </ul>
-            <div class="side-nav">
-                <div class="search">
-                    <input type="search" placeholder="Search for high-resolution images">
-                    <div id="holder"></div>
-                </div>
-                <ul class="login-nav">
-                    <li class="join"><a href=""> Login </a></li>
-                    <li class="separate"></li>
-                    <li class="join"><a href=""> Sign up </a></li>
-                </ul>
-                <div class="menu-button">
-                    <div class="burger">
-                        <div id="line1"></div>
-                        <div id="line2"></div>
-                        <div id="line3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+
+    <!-- Add nav-bar from 'HTML/layout.html' -->
+    <nav th:replace="html/layout::fotogram-nav-bar"></nav>
+
     <main>
         <div class="image-info">
             <h3 class="left" id="credit">Photo by:</h3>

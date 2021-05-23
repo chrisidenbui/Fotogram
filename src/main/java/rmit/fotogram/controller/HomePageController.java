@@ -6,8 +6,58 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomePageController {
 
+    // add mapping for 'Home' button
     @GetMapping("/home")
     public String showHomePage() {
         return "html/homepage"; // --> homepage.html
     }
+
+    // add mapping for 'Images' button
+    @GetMapping("/imagetab")
+    public String showImageTab () {
+        return "html/imagetab";
+    }
+
+    // add mapping for 'Photos' button
+    @GetMapping("/collections")
+    public String showCollections() {
+        return "html/collections";
+    }
+
+    // add mapping for 'Explore' button
+    @GetMapping("/explore")
+    public String showExplore() {
+        return "html/explore";
+    }
+
+    // add mapping for 'About Us' button
+    @GetMapping("/about")
+    public String showPhotos() {
+        return "html/aboutus";
+    }
+
+//    // add mapping for '' button
+//    @GetMapping("")
+//    public String show() {
+//        return "html/";
+//    }
+//
+//    // add mapping for '' button
+//    @GetMapping("")
+//    public String show() {
+//        return "html/";
+//    }
+//
+//    // add mapping for '' button
+//    @GetMapping("")
+//    public String show() {
+//        return "html/";
+//    }
+//
+//    // add mapping for '' button
+//    @GetMapping("")
+//    public String show() {
+//        return "html/";
+//    }
+
 }

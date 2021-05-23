@@ -7,14 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "useracc")
@@ -54,11 +47,12 @@ public class User {
     
     // UserAcc and Post
     @OneToMany(mappedBy = "postedUser", // 'postedUser' is the property of Post class.
-            cascade = CascadeType.ALL)
-    private List<Post> postList;
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private Set<Post> postList;
     
     // User and Likes
-    @OneToMany(mappedBy = "liker")      // 'liker' is the property of Likes class.
+    @OneToMany(mappedBy = "liker", fetch = FetchType.LAZY)      // 'liker' is the property of Likes class.
     private Set<Likes> likes = new HashSet<>();
     
     
@@ -173,11 +167,11 @@ public class User {
         this.lastLoginTime = lastLoginTime;
     }
 
-    public List<Post> getPostList() {
+    public Set<Post> getPostList() {
         return postList;
     }
 
-    public void setPostList(List<Post> postList) {
+    public void setPostList(Set<Post> postList) {
         this.postList = postList;
     }
     
@@ -207,7 +201,7 @@ public class User {
     // convenient methods
     public void addPost(Post newPost) {
         if (postList == null)  {
-            postList = new ArrayList<Post>();
+            postList = new HashSet<Post>();
         }
         
         postList.add(newPost);

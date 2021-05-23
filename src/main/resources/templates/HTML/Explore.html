@@ -1,56 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/explore_style.css">
-
-    <title> Photographics - Homepage </title>
+<!--    <link rel="stylesheet" href="../CSS/explore_style.css">-->
+    <link rel="stylesheet" th:href="@{/CSS/explore_style.css}" />
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
+    <title> Photographics - Explore </title>
 </head>
 <body style="background-color: #222222">
 
 <main style="z-index: 1">
     <div class="top_square" style="z-index: -1"></div>
-    <nav class="nav-bar">
-        <div class="max-width">
-            <div class="logo">
-                <a href=""> PHOTOGRAPHICS </a>
-            </div>
-            <ul class="nav-menu">
-                <li class=""><a href=""> Home </a></li>
-                <li class=""><a href=""> Images </a>
-                    <ul class="dropdown">
-                        <li><a href=""> Photos </a></li>
-                        <li><a href=""> Graphics </a></li>
-                    </ul>
-                </li>
-                <li class=""><a href=""> Topics </a>
-                    <ul class="dropdown">
-                        <li><a href=""> Animals </a></li>
-                        <li><a href=""> Natures </a></li>
-                        <li><a href=""> Sky </a></li>
-                        <li><a href=""> Family </a></li>
-                    </ul>
-                </li>
-                <li class=""><a href=""> Collections </a></li>
-                <li class=""><a href=""> Explore </a></li>
-            </ul>
-            <div class="login">
-                <ul class="login-nav">
-                    <li class=""><a href=""> Login </a></li>
-                    <li class=""><a href=""> Join </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+    <!-- Add nav-bar from 'HTML/layout.html' -->
+    <nav th:replace="html/layout::fotogram-nav-bar"></nav>
+
+<!--    <nav class="nav-bar">-->
+<!--        <div class="max-width">-->
+<!--            <div class="logo">-->
+<!--                <a href=""> PHOTOGRAPHICS </a>-->
+<!--            </div>-->
+<!--            <ul class="nav-menu">-->
+<!--                <li class=""><a href=""> Home </a></li>-->
+<!--                <li class=""><a href=""> Images </a>-->
+<!--                    <ul class="dropdown">-->
+<!--                        <li><a href=""> Photos </a></li>-->
+<!--                        <li><a href=""> Graphics </a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class=""><a href=""> Topics </a>-->
+<!--                    <ul class="dropdown">-->
+<!--                        <li><a href=""> Animals </a></li>-->
+<!--                        <li><a href=""> Natures </a></li>-->
+<!--                        <li><a href=""> Sky </a></li>-->
+<!--                        <li><a href=""> Family </a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class=""><a href=""> Collections </a></li>-->
+<!--                <li class=""><a href=""> Explore </a></li>-->
+<!--            </ul>-->
+<!--            <div class="login">-->
+<!--                <ul class="login-nav">-->
+<!--                    <li class=""><a href=""> Login </a></li>-->
+<!--                    <li class=""><a href=""> Join </a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </nav>-->
+
     <div class="bot_square" style="z-index: -1"></div>
 
     <div class="container">
-        <img src="../Images/sky-5375005.jpg" class="main_image" id="main_image">
+        <img th:src="@{Images/sky-5375005.jpg}" class="main_image" id="main_image">
         <div class="tagline">"a travers forêt ou alpage"</div>
         <div class="explore">
-            <a href="Homepage.html" style="text-decoration: none;">EXPLORE</a>
+<!--            <a th:href="Homepage.html" style="text-decoration: none;">EXPLORE</a>-->
+            <a th:href="@{/home}" style="text-decoration: none;">EXPLORE</a>
         </div>
         <div class="info">Photo of the day by: "ttfatty1012" <br>Tag: forest, mystical, gloomy</div>
         <div class="view">View Image</div>
@@ -65,7 +72,8 @@
         <button class="btn" onclick="nextImg()"> Next</button>
     </div>
 </main>
-<script src="../../../../../../../../Downloads/main/JS/explore_js.js"></script>
+<!--<script src="../../../../../../../../Downloads/main/JS/explore_js.js"></script>-->
+<script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>
 </body>
 
 </html>
