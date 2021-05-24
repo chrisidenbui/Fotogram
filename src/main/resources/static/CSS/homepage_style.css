@@ -82,7 +82,34 @@
 }
 /* ---------------------------------------------------------------------------- */
 
-
+/* Arrange images and effect */
+.gallery {
+    position: relative;
+    display: grid;
+    column-count: 4;
+    grid-column-start: auto;
+    !*height: 100%;*!
+    !*width: 100%;*!
+    padding: 0 130px;
+    transition: .5s;
+}
+.box {
+    display: grid;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+    !*width: 100%;*!
+    border-radius: 10px;
+}
+.box img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+.box:hover img {
+    transform: scale(1.15);
+    filter: brightness(0.7);
+}
 /* ---------------------------------------------------------------------------- */
 
 /* Responsive when screen width is 1220px max */

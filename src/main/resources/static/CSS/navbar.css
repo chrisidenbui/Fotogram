@@ -7,7 +7,7 @@
 body { background-color: black; }
 a { text-decoration: none !important; }
 
-/* Arrange and decor the nav bar */
+/* -----------------Arrange and decor the nav bar-------------------- */
 .nav-bar {
     position: fixed;
     /* position: relative; */
@@ -27,15 +27,15 @@ a { text-decoration: none !important; }
     align-items: center;
     justify-content: space-between;
 }
-/* Transparent navbar */
+
+/* Transparent effect on navbar */
 .nav-bar.sticky .max-width{
     background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.781),  rgba(0, 0, 0, 0.544), rgba(0, 0, 0, 0.344), rgba(0, 0, 0, 0.020));
     transition: all 0.3s linear;
     /* background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255, 0.685), rgb(255, 255, 255, 0.338), rgb(255, 255, 255, 0.103)); */
 }
-/* ---------------------------------------------------------------------------- */
 
-/* Decor and effect for the logo */
+/* -----------------Decor and effect for the logo-------------------- */
 .logo a {
     position: relative;
     padding: 10px;
@@ -83,16 +83,15 @@ a { text-decoration: none !important; }
     opacity: 1;
     transition: .5s;
 }
-/* ---------------------------------------------------------------------------- */
 
-/* Decor the center nav menu button */
+/* --------------Decor the center nav menu button-------------------- */
 .nav-menu { position: relative; }
 .nav-menu li {
     list-style: none;
     display: inline-block;
 }
 .main-menu {
-    margin: 10px 25px 0 25px;
+    margin: 10px 10px 0 10px;
     transition: 0.5s;
 }
 .main-menu > a {
@@ -100,13 +99,12 @@ a { text-decoration: none !important; }
     position: relative;
     font-family: 'Amatic SC', cursive;
     color: lightgray;
-    margin: 0 0 10px 0;
+    /*margin: 0 0 10px 0;*/
     font-size: 25px;
+    letter-spacing: 1.5px;
     font-weight: 800;
 }
-.main-menu > a:hover {
-    color: white;
-}
+.main-menu > a:hover { color: white; }
 .main-menu > a:before {
     position: absolute;
     content: '';
@@ -142,56 +140,54 @@ a { text-decoration: none !important; }
     bottom: -5px;
 }
 
-/* ---------------------------------------------------------------------------- */
-
-/* Decor dropdown button */
-.dropdown {
-    position: absolute;
-    background-color: black;
-    display: none;
-}
-.dropdown li {
-    width: fit-content;
-    display: list-item;
-    display: block;
-    text-decoration: none;
-}
-.dropdown li a {
-    color: lightgray;
-    font-family: 'Amatic SC', cursive;
-    font-size: 20px;
-    line-height: 30px;
-    transition: 0.3s;
-}
-.nav-menu li:hover .dropdown {
-    box-shadow: 0 0 5px rgb(0, 0, 0);
-    display: block;
-}
-.dropdown li a:hover {
-    background-color: transparent !important;
-    color: white;
-}
-/* ---------------------------------------------------------------------------- */
-
-/* Search bar and icon */
+/* -------------------Decor dropdown button--------------------------- */
+/*.dropdown {*/
+/*    position: absolute;*/
+/*    background-color: black;*/
+/*    display: none;*/
+/*}*/
+/*.dropdown li {*/
+/*    width: fit-content;*/
+/*    display: list-item;*/
+/*    display: block;*/
+/*    text-decoration: none;*/
+/*}*/
+/*.dropdown li a {*/
+/*    color: lightgray;*/
+/*    font-family: 'Amatic SC', cursive;*/
+/*    font-size: 20px;*/
+/*    line-height: 30px;*/
+/*    transition: 0.3s;*/
+/*}*/
+/*.nav-menu li:hover .dropdown {*/
+/*    box-shadow: 0 0 5px rgb(0, 0, 0);*/
+/*    display: block;*/
+/*}*/
+/*.dropdown li a:hover {*/
+/*    background-color: transparent !important;*/
+/*    color: white;*/
+/*}*/
+/* -----------------Search bar and icon------------------------- */
 .search {
     display: inline-block;
     position: relative;
     margin: 0 20px;
 }
 .search input {
+    position: relative;
     outline: none;
     color: lightgray;
     font-size: 20px;
     font-family: 'Patrick Hand', cursive;
-    letter-spacing: .5px;
+    letter-spacing: 1.5px;
     height: 30px;
     width: 30px;
     border-radius: 100px;
     border: 2px solid lightgray;
     padding: 0 0 0 20px;
     background-color: transparent;
-    transition: .3s;
+    transition: .5s;
+    z-index: 100;
 }
 /* Create search icon */
 .search #holder {
@@ -211,6 +207,7 @@ a { text-decoration: none !important; }
     color: gray;
 }
 .search input:focus {
+    position: -ms-device-fixed;
     border: 2px solid white;
     height: 40px;
     width: 450px;
@@ -227,9 +224,7 @@ a { text-decoration: none !important; }
     background: white;
 }
 
-/* ---------------------------------------------------------------------------- */
-
-/* Decor the login and join button */
+/* ----------------Decor the login and join button------------------ */
 .nav-bar .side-nav .login-nav,
 .nav-bar .side-nav .login-nav li {
     list-style: none;
@@ -242,6 +237,7 @@ a { text-decoration: none !important; }
     font-size: 25px;
     font-weight: 800;
     border: 1px solid transparent;
+    letter-spacing: 1.5px;
     transition: 0.5s;
     padding: 10px;
 }
@@ -280,16 +276,15 @@ a { text-decoration: none !important; }
     border-bottom: 2px solid white;
     border-right: 2px solid white;
     opacity: 0;
-    transition: 0.5s;
+    transition: .5s;
 }
 .nav-bar .side-nav .login-nav > li a:hover:after{
     opacity: 1;
     bottom: -5px;
     right: -1px;
 }
-/* ---------------------------------------------------------------------------- */
 
-/* Burger button when screen is minimized */
+/* -------------Burger button when screen is minimized----------------- */
 .burger div {
     display: none;
     background-color: gray;
@@ -313,10 +308,9 @@ a { text-decoration: none !important; }
     transform: translateX(10px);
     transition: 0.5s;
 }
-/* ---------------------------------------------------------------------------- */
 
-/* Responsive for navbar components */
-@media screen and (max-width: 1170px) {
+/* -----------------------Responsive for navbar components------------------------------- */
+@media screen and (min-width: 1221px) and (max-width: 1170px) {
     .search input:focus {
         font-size: 15px;
         height: 40px;
@@ -324,8 +318,9 @@ a { text-decoration: none !important; }
         transition: .3s;
     }
 }
+
 /* Responsive when screen width is 1220px max */
-@media screen and (max-width: 1220px) {
+@media screen and (min-width: 1081px) and (max-width: 1220px) {
     .max-width {
         padding: 15px 50px;
         transition: .3s;
@@ -348,19 +343,20 @@ a { text-decoration: none !important; }
         font-size: 15px;
         height: 30px;
         width: 250px;
-        transition: .3s;
+        transition: .5s;
     }
     .search input:focus::placeholder {
         opacity: 1;
         font-size: 15px;
     }
-    
+
 }
+
 /* Responsive when screen width is 1680px max */
-@media screen and (max-width: 1680px) {
+@media screen and (min-width: 500px) and (max-width: 1080px) {
+
     /* Hide navmenu when burger menu exists */
-    .nav-menu > .main-menu,
-    .nav-menu.display > .main-menu .dropdown { display: none; }
+    .nav-menu > .main-menu { display: none; }
     .menu-button {
         display: inline-flex;
         padding: 10px;
@@ -370,6 +366,7 @@ a { text-decoration: none !important; }
     .menu-button:hover > .burger div {
         background-color: white;
     }
+
     /* Open burger menu, display menu cancel button */
     .menu-button.open { padding: 10px; }
     .menu-button.open #line2 {
@@ -386,6 +383,7 @@ a { text-decoration: none !important; }
         background-color: white;
         transform: rotate(45deg) translate(0, -10px);
     }
+
     /* Show navmenu when click on burger menu */
     .nav-menu.display {
         position: fixed;
