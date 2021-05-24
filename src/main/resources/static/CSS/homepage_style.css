@@ -85,18 +85,20 @@
 /* Arrange images and effect */
 .gallery {
     position: relative;
+    display: grid;
     column-count: 4;
-    height: 100%;
-    width: 100%;
+    grid-column-start: auto;
+    !*height: 100%;*!
+    !*width: 100%;*!
     padding: 0 130px;
     transition: .5s;
 }
 .box {
-    display: inline-grid;
+    display: grid;
     margin-bottom: 5px;
     margin-top: 10px;
     overflow: hidden;
-    /* width: 100%; */
+    !*width: 100%;*!
     border-radius: 10px;
 }
 .box img {
