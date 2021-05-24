@@ -1,4 +1,3 @@
-
 /* ---------------------------------------------------------------------------- */
 /* .carousel > .carousel-item {
     position: absolute;
@@ -88,9 +87,9 @@
     display: grid;
     column-count: 4;
     grid-column-start: auto;
-    !*height: 100%;*!
-    !*width: 100%;*!
-    padding: 0 130px;
+    /*!*height: 100%;*!*/
+/*!*width: 100%;*!*/
+padding: 0 130px;
     transition: .5s;
 }
 .box {
@@ -98,8 +97,8 @@
     margin-bottom: 5px;
     margin-top: 10px;
     overflow: hidden;
-    !*width: 100%;*!
-    border-radius: 10px;
+    /*!*width: 100%;*!*/
+border-radius: 10px;
 }
 .box img {
     width: 100%;
@@ -118,8 +117,6 @@
     .gallery {
         column-count: 3;
         transition: .5s;
-        padding: none;
+        padding: 0;
     }
 }
-
-
