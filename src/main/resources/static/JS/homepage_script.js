@@ -7,7 +7,7 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("load", () => {
     //Function to open Image Pane
-    const all_post = document.querySelectorAll('.box > img');
+    const all_post = document.querySelectorAll('.col > img');
     openImageTab(all_post);
 
     const all_carousel = document.querySelectorAll('.carousel-item > img');
@@ -30,7 +30,7 @@ burger.addEventListener('click', () => {
 })
 
 //Fetch API and put in Post class
-class Post {
+class Post{
     constructor(img_src, download_urls, username, likes, tags, description) {
         this._img_src = img_src;
         this._download_urls = download_urls;
@@ -76,23 +76,12 @@ fetch('http://localhost:8080/posts')
         // }
     })
 
-// //Buttons for Topic
-// const animal_option = document.querySelector("#animals");
-// animal_option.addEventListener("click", changeGallery())
-//
-// function changeGallery(topicPhotoLost) {
-//     const all_post = document.querySelectorAll('.box > img');
-//     for (let a = 0; a < all_post.length; a++) {
-//         all_post[a].src = topicPhotoLost[a].src;
-//     }
-// }
 
 //General function of opening Image Tab
 function openImageTab(all) {
     for (let a = 0; a < all.length; a++) {
-        all[a].addEventListener("click", function () {
-            let src = all[a].src;
-            window.document.location = "./imagetab";
+        all[a].addEventListener('click', () =>{
+            window.location = './imagetab?id=' + a;
         })
     }
 }

@@ -1,10 +1,15 @@
 var open = document.getElementById('hamburger');
 var changeIcon = true;
+var post_id = 0;
 document.addEventListener('DOMContentLoaded', () => {
     // const params = (new URL(document.location)).searchParams;
     // let image_src = document.location.search.replace(/^.*?\=/,'')
     // let main_image = document.querySelector('.image_tab > img');
     // main_image.src = image_src
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    post_id = urlParams.get('id')
+    console.log(post_id)
 })
 
 open.addEventListener("click", function(){
