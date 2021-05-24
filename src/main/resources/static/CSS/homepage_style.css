@@ -1,4 +1,8 @@
-/* ---------------------------------------------------------------------------- */
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+/* ----------Arrange top page's slider----------- */
 /* .carousel > .carousel-item {
     position: absolute;
     max-width: 100%;
@@ -9,23 +13,29 @@
 .carousel-inner .carousel-item > img {
     height: 100%;
     width: 100%;
-    
+
 } */
-/* Arrange top page's slider */
-.carousel {
-    width: 100%;
-    height: 80vh;
-    z-index: 1;
-}
 .carousel-inner {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    height: 80vh;
+    line-height:120px;
+    text-align:center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 .carousel-item img {
-    width: 100%;
-    object-fit: scale-down;
+    max-width: 100%;
+    max-height: 100%;
     filter: brightness(0.7);
-    object-fit: cover;
+}
+.carousel-item .carousel-caption p {
+    /*position: absolute;*/
+    color: lightgray;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    /*width: 100%;*/
+    /*top: 50%;*/
 }
 /* .carousel-caption {
     text-align: center;
@@ -61,6 +71,7 @@
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
     font-weight: 600;
+    letter-spacing: 1.5px;
 }
 .carousel-indicators {
     bottom: 30px;
@@ -74,49 +85,37 @@
     margin-left: 20px;
     margin-right: 20px;
     transition: .5s linear;
+    cursor: pointer;
 }
 .active {
     border: white;
     background-color: white;
 }
-/* ---------------------------------------------------------------------------- */
 
-/* Arrange images and effect */
-.gallery {
-    position: relative;
-    display: grid;
-    column-count: 4;
-    grid-column-start: auto;
-    /*!*height: 100%;*!*/
-/*!*width: 100%;*!*/
-padding: 0 130px;
-    transition: .5s;
-}
-.box {
-    display: grid;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    overflow: hidden;
-    /*!*width: 100%;*!*/
-border-radius: 10px;
-}
-.box img {
-    width: 100%;
-    border-radius: 10px;
-    transition: 0.25s;
-}
-.box:hover img {
-    transform: scale(1.15);
-    filter: brightness(0.7);
-}
-/* ---------------------------------------------------------------------------- */
 
-/* Responsive when screen width is 1220px max */
-@media screen and (max-width: 1220px) {
-    /* Responsive gallery menu */
-    .gallery {
-        column-count: 3;
-        transition: .5s;
-        padding: 0;
+@media screen and (min-width: 1001px) and (max-width: 1280px) {
+    .col {
+        flex: 50%;
+        max-width: 30%;
     }
+    .row:first-child,
+    .row:last-child { padding: 0 80px; }
+}
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+    .col {
+        flex: 50%;
+        max-width: 60%;
+    }
+    .row:first-child,
+    .row:last-child { padding: 0 50px; }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .col {
+        flex: 100%;
+        max-width: 100%;
+    }
+    .row:first-child,
+    .row:last-child { padding: 0 5px; }
 }

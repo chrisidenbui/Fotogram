@@ -1,26 +1,31 @@
-/* Arrange images and effect */
-.gallery {
-    position: relative;
-    column-count: 4;
-    height: 100%;
+/* -----------Arrange images and effect------------- */
+
+.row {
+    display: flex;
+    /*padding: 0 4px;*/
+}
+
+/* Create four equal columns that sits next to each other */
+.col {
+    flex: 15%;
+    max-width: 33.3%;
+}
+
+.row:first-child,
+.row:last-child { padding: 0 130px; }
+
+.col img {
+    margin-top: 20px;
+    vertical-align: middle;
     width: 100%;
-    padding: 0 130px;
-    transition: .5s;
-}
-.box {
-    display: inline-grid;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    overflow: hidden;
-    /* width: 100%; */
     border-radius: 10px;
+    transition: 0.3s linear;
+
 }
-.box img {
-    width: 100%;
-    border-radius: 10px;
-    transition: 0.25s;
-}
-.box:hover img {
-    transform: scale(1.15);
+.col img:hover {
+    transform: scale(1.1);
     filter: brightness(0.7);
+    box-shadow: 5px 5px 5px 3px rgba(52, 52, 52, 0.29);
+    cursor: pointer;
+    z-index: 100;
 }
