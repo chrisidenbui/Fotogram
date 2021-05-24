@@ -19,9 +19,10 @@ public class HomePageController {
         return "html/imagetab";
     }
 
-    @GetMapping("/{id}")
-    public String getUser(@PathVariable Long id) {
-        return "html/imagetab/" + id;
+    // add mapping for 'Images' button
+    @GetMapping("/animals")
+    public String showAnimals () {
+        return "html/animals";
     }
 
     // add mapping for 'Photos' button

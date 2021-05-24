@@ -8,11 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
 
-<!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
-<!--    <link rel="stylesheet" href="/../CSS/homepage_style.css">-->
     <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
     <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}" />
-
+    <link rel="stylesheet" th:href="@{/CSS/gallery.css}" />
     <title> Photographics - Homepage </title>
 </head>
 <body>
@@ -25,12 +23,6 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img th:src="@{Images/sky-5375005.JPG}">
-                <!-- <div class="carousel-caption">"a travers forêt ou alpage"</div>
-                <div class="carousel-caption">
-                    Photo of the day by: "ttfatty1012" <br>
-                    Tag: forest, mystical, gloomy
-                </div>
-                <div class="carousel-caption">View Image</div> -->
             </div>
             <div class="carousel-item">
 <!--                <img src="../../../../../../../../Downloads/main/Images/mario.jpg">-->
@@ -58,7 +50,7 @@
         </div>
     </header>
     <main>
-        <div th:replace="html/gallery::fotogram-gallery"> </div>
+        <div th:replace="html/gallery::fotogram-default-gallery"> </div>
     </main>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

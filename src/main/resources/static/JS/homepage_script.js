@@ -1,10 +1,11 @@
+
 // Transparent navbar when scroll window down
 window.addEventListener("scroll", () => {
     var header = document.querySelector(".nav-bar");
     header.classList.toggle("sticky", window.scrollY);
 })
 
-window.addEventListener("load", () =>{
+window.addEventListener("load", () => {
     //Function to open Image Pane
     const all_post = document.querySelectorAll('.box > img');
     openImageTab(all_post);
@@ -21,8 +22,7 @@ burger.addEventListener('click', () => {
         burger.classList.add('open');
         navmenu.classList.add('display');
         burgerclick = true;
-    }
-    else {
+    } else {
         burger.classList.remove('open');
         navmenu.classList.remove('display');
         burgerclick = false;
@@ -76,7 +76,16 @@ fetch('http://localhost:8080/posts')
         // }
     })
 
-
+// //Buttons for Topic
+// const animal_option = document.querySelector("#animals");
+// animal_option.addEventListener("click", changeGallery())
+//
+// function changeGallery(topicPhotoLost) {
+//     const all_post = document.querySelectorAll('.box > img');
+//     for (let a = 0; a < all_post.length; a++) {
+//         all_post[a].src = topicPhotoLost[a].src;
+//     }
+// }
 
 //General function of opening Image Tab
 function openImageTab(all) {
