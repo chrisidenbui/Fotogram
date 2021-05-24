@@ -3,18 +3,6 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 /* ----------Arrange top page's slider----------- */
-/* .carousel > .carousel-item {
-    position: absolute;
-    max-width: 100%;
-    width: 100%;
-    height: 80vh;
-    overflow: hidden;
-}
-.carousel-inner .carousel-item > img {
-    height: 100%;
-    width: 100%;
-    
-} */
 .carousel-inner {
     position: relative;
     height: 80vh;
@@ -92,81 +80,49 @@ html {
     background-color: white;
 }
 
-/* -----------Arrange images and effect------------- */
-/*.gallery {
-    position: relative;
-    display: grid;
-    column-count: 4;
-    grid-column-start: auto;
-    !*height: 100%;*!
-    !*width: 100%;*!
-    padding: 0 130px;
-    transition: .5s;
-}
-.box {
-    display: grid;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    overflow: hidden;
-    !*width: 100%;*!
-    border-radius: 10px;
-}
-.box img {
-    width: 100%;
-    border-radius: 10px;
-    transition: 0.25s;
-}
-.box:hover img {
-    transform: scale(1.15);
-    filter: brightness(0.7);
-    cursor: pointer;
-}*/
+/* -----------Create four equal columns that sits next to each other------------- */
 .row {
     display: flex;
-    /*padding: 0 4px;*/
-}
 
-/* Create four equal columns that sits next to each other */
+}
 .col {
     flex: 15%;
-    max-width: 33.3%;
+    max-width: 50%;
 }
-
 .row:first-child,
-.row:last-child { padding: 0 130px; }
-
+.row:last-child { padding: 0 250px; }
 .col img {
     margin-top: 20px;
     vertical-align: middle;
     width: 100%;
     border-radius: 10px;
     transition: 0.3s linear;
-
 }
 .col img:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     filter: brightness(0.7);
-    box-shadow: 5px 5px 5px 3px rgba(52, 52, 52, 0.29);
+    box-shadow: 5px 5px 5px 3px rgba(232, 232, 232, 0.54);
     cursor: pointer;
     z-index: 100;
 }
-@media screen and (min-width: 1001px) and (max-width: 1280px) {
+
+/* Responsive layout - reduce columns by 1 after scaling the screen */
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
     .col {
-        flex: 50%;
-        max-width: 30%;
+        flex: 30%;
+        max-width: 40%;
     }
     .row:first-child,
-    .row:last-child { padding: 0 80px; }
+    .row:first-child { padding: 0 80px; }
 }
 @media screen and (min-width: 701px) and (max-width: 1000px) {
     .col {
         flex: 50%;
-        max-width: 60%;
+        max-width: 70%;
     }
     .row:first-child,
     .row:last-child { padding: 0 50px; }
 }
-
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
     .col {
