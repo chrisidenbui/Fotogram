@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
-
-<!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
-<!--    <link rel="stylesheet" href="../CSS/imagetab_style.css">-->
     <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
     <link rel="stylesheet" th:href="@{/CSS/imagetab_style.css}" />
+<!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
+<!--    <link rel="stylesheet" href="../CSS/imagetab_style.css">-->
+
     <title> Photographics - Image </title>
 </head>
 <body>
@@ -24,8 +24,10 @@
             <h3 class="left" id="description">Photo description:</h3>
             <h3 class="left" id="tag">Tag: #night</h3>
         </div>
-        <div class="image_tab">
-            <img class="img-fluid" alt="Responsive image" src="../Images/image.png">
+        <div class="row justify-content-end">
+            <div class="col-xl-auto">
+                <img class="img-fluid" alt="Responsive image" th:src="@{/Images/image.png}">
+            </div>
         </div>
         <div class="carousel">
             <a class="carousel-control-prev-icon" href="" data-slide="prev"></a>
@@ -51,5 +53,6 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" th:src="@{JS/imagetab_js.js}"></script>
+    <script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>
 </body>
 </html>

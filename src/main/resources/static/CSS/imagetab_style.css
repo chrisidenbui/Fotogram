@@ -1,5 +1,11 @@
-/* ---------------------Left Side--------------------------- */
-/*main .image-info{
+/* -----------------Image Part----------------- */
+
+.row .col-xl-auto {
+    float: right;
+    transform: translateY(10%);
+    transition: .5s;
+}
+.image-info{
     position: absolute;
     float: left;
     padding: 0 130px;
@@ -10,27 +16,10 @@
     top: 20%;
     left: 2%;
     transition: .5s;
-}*/
-
-/* ---------------------Image Part--------------------------------- */
-/*main .image_tab{
-    position: relative;
-    display: block;
-    float: right;
-    align-items: center;
-    transform: translateY(10%);
-    !* top: 17%;
-    left: 23%; *!
 }
-.img-fluid {
-    width: 100%;
-    vertical-align: middle;
-    transition: .5s;
-}*/
-
-/* --------------Icon Part-------------------------- */
+/* ------------------Prev and Next Icon--------------------- */
 /*Prev and Next Icon*/
-/*.carousel {
+.carousel {
     position: absolute;
     top: 90%;
     left: 25%;
@@ -42,23 +31,28 @@
     width: 200px;
     display: flex;
     align-self: center;
-}*/
-/*Reaction icon*/
-/*.container-icon .heart-icon {
+}
+/* ------------------Reaction icon------------------ */
+.container-icon .heart-icon {
     width: 100px;
     stroke-width: 20;
     stroke: white;
+    cursor: pointer;
 }
 .container-icon .heart-icon path {
     fill: transparent;
     stroke-width: 20;
     stroke: white;
+    stroke-dasharray: 1580;
 }
 .container-icon .heart-icon:hover path {
-    cursor: pointer;
-    animation: animated-heart .5s linear forwards;
+    animation: animated-heart 1.5s linear forwards;
 }
 @keyframes animated-heart {
+    80%{
+        stroke-dashoffset: 3160;
+        fill: transparent;
+    }
     100%{
         stroke-dashoffset: 3160;
         fill: white;
@@ -69,37 +63,68 @@
     margin: 0 0 0 10px;
     stroke-width: 20;
     stroke: white;
+    cursor: pointer;
 }
 .container-icon .download-icon path {
     fill: transparent;
     stroke-width: 20;
     stroke: white;
+    stroke-dasharray: 1780;
 }
 .container-icon .download-icon:hover path {
-    cursor: pointer;
-    animation: animated-download .5s linear alternate;
+    animation: animated-download 1.5s linear forwards;
 }
 @keyframes animated-download {
+    80%{
+        stroke-dashoffset: 3560;
+        fill: transparent;
+    }
     100%{
         stroke-dashoffset: 3560;
         fill: white;
     }
-}*/
-
-/* ---------------------Responsive Part-------------------------- */
-/*
-@media screen and (max-width: 1700px) {
+}
+/* ---------------Responsive Part----------------- */
+@media screen and (min-width: 1301px) and (max-width: 1700px) {
     main .image-info{
         padding: 0 50px;
         transition: .5s;
     }
-    main .image_tab{
-        transform: translateY(50%);
-    }
-    .img-fluid {
+    .col-xl-auto > img {
         float: right;
-        vertical-align: middle;
-        width: 70%;
-        transition: .5s;
+        width: 1200px;
+        transform: translateY(10%);
+        /*transition: .5s;*/
     }
-}*/
+}
+@media screen and (min-width: 801px) and (max-width: 1300px) {
+    main .image-info{
+        /*position: relative;*/
+        padding: 0 5px;
+        top: 70%;
+        left: 2%;
+        transition: .3s;
+    }
+    .col-xl-auto > img {
+        float: right;
+        width: 80%;
+        transform: translateY(30%);
+        /*transition: .5s;*/
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 800px) {
+    main .image-info{
+        /*position: relative;*/
+        padding: 0 5px;
+        font-size-adjust: inherit;
+        font-weight: 600;
+        top: 70%;
+        left: 2%;
+        transition: .3s;
+    }
+    .col-xl-auto > img {
+        width: 100%;
+        transform: translateY(30%);
+        /*transition: .5s;*/
+    }
+}
