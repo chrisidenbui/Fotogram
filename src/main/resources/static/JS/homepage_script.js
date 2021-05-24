@@ -73,7 +73,7 @@ for (let a = 0; a < all.length; a++) {
     all[a].addEventListener("click",function (){
         let src = all[a].src;
         // localStorage.setItem('SRC', src);
-        window.document.location = './Imagetab.html' + '?image_src=' + src;
+        window.document.location = '@{/HTML/Imagetab.html/' + '?image_src=' + src;
     })
 }
 
