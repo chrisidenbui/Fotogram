@@ -27,7 +27,7 @@
             <h3 class="left" id="tag">Tag: #night</h3>
         </div>
         <div class="image_tab">
-            <img class="img-fluid" alt="Responsive image" src="../../../../../../../../Downloads/main/Images/image.png">
+            <img class="img-fluid" alt="Responsive image" th:src=@"{/Images/image.png}">
         </div>
         <div class="carousel">
             <a class="carousel-control-prev-icon" href="" data-slide="prev"></a>
@@ -59,6 +59,6 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../../../../../../../../Downloads/main/JS/imagetab_js.js"></script>
+    <script th:src="@{/JS/imagetab_js.js}"></script>
 </body>
 </html>

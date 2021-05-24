@@ -20,8 +20,7 @@ public class Post {
     
     @Column(name = "creation_date")
     private Timestamp createdDate;
-    
-    
+
     @Column(name = "photo_location")
     private String photoLocation;
     

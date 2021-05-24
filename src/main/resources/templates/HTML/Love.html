@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
+<!--    <link rel="stylesheet" href="/../CSS/homepage_style.css">-->
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}" />
+
+    <title> Photographics - Love </title>
+</head>
+<body>
+
+    <!-- Add nav-bar from 'HTML/layout.html' -->
+    <nav th:replace="html/layout::fotogram-nav-bar"></nav>
+
+    <main>
+        <div class="gallery" id="gallery" th:object="${lovePosts}">
+
+            <div class="box" th:each="post: ${lovePosts}">
+                <img th:src="${post.photoUrl}" alt="">
+            </div>
+        </div>
+    </main>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--    <script src="../../../../../../../../Downloads/main/JS/homepage_script.js"></script>-->
+    <script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>
+</body>
+</html>
