@@ -2,6 +2,7 @@ package rmit.fotogram.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class HomePageController {
@@ -16,6 +17,12 @@ public class HomePageController {
     @GetMapping("/imagetab")
     public String showImageTab () {
         return "html/imagetab";
+    }
+
+    // add mapping for 'Images' button
+    @GetMapping("/animals")
+    public String showAnimals () {
+        return "html/animals";
     }
 
     // add mapping for 'Photos' button
@@ -36,28 +43,6 @@ public class HomePageController {
         return "html/aboutus";
     }
 
-//    // add mapping for '' button
-//    @GetMapping("")
-//    public String show() {
-//        return "html/";
-//    }
-//
-//    // add mapping for '' button
-//    @GetMapping("")
-//    public String show() {
-//        return "html/";
-//    }
-//
-//    // add mapping for '' button
-//    @GetMapping("")
-//    public String show() {
-//        return "html/";
-//    }
-//
-//    // add mapping for '' button
-//    @GetMapping("")
-//    public String show() {
-//        return "html/";
-//    }
+
 
 }
