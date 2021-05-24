@@ -12,9 +12,11 @@
             <thead class="thead table-bordered">
                 <tr>
                     <th>ID</th>
-                    <th>Username</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>User name</th>
                     <th>Email</th>
-                    <th>Day of birth</th>
+                    <th>Date of birth</th>
                 </tr>
             </thead>
 
@@ -22,6 +24,8 @@
                 <!--/*@thymesVar id="listOfUsers" type=""*/-->
                 <tr th:each="user : ${listOfUsers}">
                     <td th:text="${user.userId}"></td>
+                    <td th:text="${user.firstName}"></td>
+                    <td th:text="${user.lastName}"></td>
                     <td th:text="${user.userName}"></td>
                     <td th:text="${user.email}"></td>
                     <td th:text="${user.dob}"></td>
