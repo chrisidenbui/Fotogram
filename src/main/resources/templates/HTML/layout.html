@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
-<!--  <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}" />-->
+  <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}" />
 </head>
 
 <body>
@@ -13,25 +13,14 @@
     <div class="logo">
       <a th:href="@{/home}">Fotogram</a>
     </div>
+    <!-- Indicate Middle Menu on Navigation bar -->
     <ul class="nav-menu">
       <li class="main-menu"><a th:href="@{/home}"> Home </a></li>
-      <li class="main-menu"><a th:href="@{/imagetab}"> Images </a>
-        <ul class="dropdown">
-          <li><a class="dropdown-item" href=""> Photos </a></li>
-          <li><a class="dropdown-item" href=""> Graphics </a></li>
-        </ul>
-      </li>
-      <li class="main-menu"><a th:href="@{/collections}"> Collections </a>
-        <ul class="dropdown">
-          <li><a class="dropdown-item" href=""> Animals </a></li>
-          <li><a class="dropdown-item" href=""> Natures </a></li>
-          <li><a class="dropdown-item" href=""> Sky </a></li>
-          <li><a class="dropdown-item" href=""> Family </a></li>
-          <li><a class="dropdown-item" href=""> Love </a></li>
-        </ul>
-      </li>
-      <li class="main-menu"><a th:href="@{/explore}"> Explore </a></li>
-      <li class="main-menu"><a th:href="@{/about}"> About Us </a></li>
+      <li class="main-menu"><a href=""> Animals </a></li>
+      <li class="main-menu"><a href=""> Natures </a></li>
+      <li class="main-menu"><a href=""> Sky </a></li>
+      <li class="main-menu"><a href=""> Family </a></li>
+      <li class="main-menu"><a href=""> Love </a></li>
     </ul>
     <div class="side-nav">
       <div class="search">
