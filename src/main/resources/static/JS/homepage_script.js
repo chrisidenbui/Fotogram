@@ -56,15 +56,15 @@ class Post {
     }
 }
 
-fetch('http://localhost:8080/posts')
+fetch('http://localhost:8080/home')
     .then(response => response.json())
     .then(json => {
         console.log(json);
-        for (let j = 0; j < json.length; j++) {
-            let currResult = json[j];
-            let newPost = new Post(currResult.urls, currResult.username, currResult.likes, tagList, currResult.description);
-            postList.push(newPost);
-        }
+        // for (let j = 0; j < json.length; j++) {
+        //     let currResult = json[j];
+        //     let newPost = new Post(currResult.urls, currResult.username, currResult.likes, tagList, currResult.description);
+        //     postList.push(newPost);
+        // }
     })
 
 //Function to open Image Pane
@@ -73,8 +73,8 @@ openImageTab(all_post);
 
 const all_carousel = document.querySelectorAll('.carousel-item > img');
 openImageTab(all_carousel);
-//General function of opening Image Tab
 
+//General function of opening Image Tab
 function openImageTab(all){
     for (let a = 0; a < all.length; a++) {
         all[a].addEventListener("click",function (){
