@@ -13,18 +13,16 @@
     <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
     <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}" />
 
-    <title> Photographics - Animals </title>
+    <title> Photographics - Family </title>
 </head>
 <body>
 
     <!-- Add nav-bar from 'HTML/layout.html' -->
     <nav th:replace="html/layout::fotogram-nav-bar"></nav>
 
-
     <main>
-        <div class="gallery" id="gallery" th:object="${animalPosts}">
-
-            <div class="box" th:each="post: ${animalPosts}">
+        <div class="gallery" id="gallery" th:object="${familyPosts}">
+            <div class="box" th:each="post: ${familyPosts}">
                 <img th:src="${post.photoUrl}" alt="">
             </div>
         </div>
