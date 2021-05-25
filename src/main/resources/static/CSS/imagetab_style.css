@@ -11,8 +11,9 @@
 .heart-icon {
     position: absolute;
     display: block;
-    border-radius: 38px;
+    border-radius: 10px;
     background-color: white;
+    box-shadow: 0 3px 3px white;
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
     font-weight: 800;
@@ -26,8 +27,13 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
+.heart-icon:hover {
+    color: #ff4949;
+    background-color: #ffcfcb;
+}
 .heart-icon.liked {
     background-color: transparent;
+    box-shadow: none;
     color: white;
 }
 .heart-icon:before {
@@ -35,6 +41,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    box-shadow: none;
     background: #ff4949;
     width: 50%;
     height: 100%;
@@ -44,7 +51,8 @@
     transform: translateX(-100px) rotate(-325deg);
 }
 .heart-icon.liked:before {
-    left: 15px;
+    left: 15.5px;
+    box-shadow: none;
     transform: translateX(0) rotate(35deg);
     border-bottom-left-radius: 75px;
     border-top-left-radius: 75px;
@@ -55,6 +63,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    box-shadow: none;
     background: #ff4949;
     width: 50%;
     height: 100%;
@@ -64,9 +73,45 @@
     transform: translateX(100px) rotate(325deg);
 }
 .heart-icon.liked:after {
-    right: 15px;
+    right: 15.5px;
+    box-shadow: none;
     transform: translateX(0) rotate(-35deg);
     border-bottom-right-radius: 75px;
     border-top-right-radius: 75px;
     opacity: 1;
+}
+.bi-arrow-down {
+    position: absolute;
+    display: block;
+    fill: white;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 38px;
+    text-align: center !important;
+    text-decoration: none !important;
+    width: 100px;
+    height: 38px;
+    bottom: 60%;
+    right: 3%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+button {
+    position: absolute;
+    width: 100px;
+    height: 38px;
+    text-align: left;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px white;
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #222222;
+    bottom: 65%;
+    right: 3%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
 }
