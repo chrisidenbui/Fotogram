@@ -57,5 +57,81 @@ html {
     background-color: white;
 }
 
-
-
+/* ---------------Arrange images and effect-------------- */
+.gallery {
+    position: relative;
+    column-count: 4;
+    height: 100%;
+    width: 100%;
+    padding: 0 130px;
+    transition: .5s;
+}
+.box {
+    display: inline-grid;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+}
+.box a img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+.box:hover a img {
+    cursor: pointer;
+    transform: scale(1.15);
+    filter: brightness(0.7);
+}
+/* -----------Responsive layout - reduce columns by 1 after scaling the screen---------- */
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .carousel-inner {
+        height: 60vh;
+        transition: .5s;
+    }
+    .carousel-item > .carousel-caption { font-size: 20px; }
+    .gallery {
+        column-count: 3;
+        padding: 0 80px;
+        transition: .5s;
+    }
+}
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+    .carousel-inner {
+        height: 50vh;
+        transition: .5s;
+    }
+    .carousel-item > .carousel-caption { font-size: 20px; }
+    .gallery {
+        column-count: 2;
+        padding: 0 40px;
+        transition: .5s;
+    }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .carousel-inner {
+        height: 40vh;
+        transition: .5s;
+    }
+    .carousel-indicators {
+        bottom: 70px;
+        transition: .5s;
+    }
+    .carousel-item > .carousel-caption {
+        font-size: 17px;
+        transform: translateY(-10%);
+    }
+    .pager a {
+        font-family: 'Amatic SC', cursive;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+    }
+    .gallery {
+        column-count: 1;
+        padding: 0 10px;
+        transition: .5s;
+    }
+}

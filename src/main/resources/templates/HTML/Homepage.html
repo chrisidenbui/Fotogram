@@ -6,79 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap"
+          rel="stylesheet">
 
-<!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
-<!--    <link rel="stylesheet" href="/../CSS/homepage_style.css">-->
-    <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
-    <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}" />
+    <!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
+    <!--    <link rel="stylesheet" href="/../CSS/homepage_style.css">-->
+    <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}"/>
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}"/>
+
 
     <title> Photographics - Homepage </title>
 </head>
 <body>
 
-    <!-- Add nav-bar from 'HTML/layout.html' -->
-    <nav th:replace="html/layout::fotogram-nav-bar"></nav>
+<!-- Add nav-bar from 'HTML/layout.html' -->
+<nav th:replace="html/layout::fotogram-nav-bar"></nav>
 
 
-    <header id="demo" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img th:src="@{Images/sky-5375005.jpg}">
-                <div class="carousel-caption first"> Tag: forest, mystical, gloomy </div>
-                <div class="carousel-caption second"> VIEW IMAGES </div>
-            </div>
-
-            <div class="carousel-item">
-<!--                <img src="../../static/Images/mario.jpg">-->
-                <img th:src="@{Images/mario.jpg}">
-                <div class="carousel-caption first"> Tag: forest, mystical, gloomy </div>
-                <div class="carousel-caption second"> VIEW IMAGES </div>
-            </div>
-            <div class="carousel-item">
-<!--                <img src="../../static/Images/kaysar.jpg">-->
-                <img th:src="@{Images/kaysar.jpg}">
-                <div class="carousel-caption first"> Tag: forest, mystical, gloomy </div>
-                <div class="carousel-caption second"> VIEW IMAGES </div>
-            </div>
-            <div class="carousel-item">
-<!--                <img src="../../../../../../../../Downloads/main/Images/shawn.jpg">-->
-                <img th:src="@{Images/shawn.jpg}">
-                <div class="carousel-caption first"> Tag: forest, mystical, gloomy </div>
-                <div class="carousel-caption second"> VIEW IMAGES </div>
-            </div>
+<header id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img th:src="@{Images/sky-5375005.jpg}">
+            <div class="carousel-caption first"> Tag: forest, mystical, gloomy</div>
+            <div class="carousel-caption second"> VIEW IMAGES</div>
         </div>
-        <!-- Indicators and Left/Right control buttons -->
-        <div class="pager">
-            <a class="carousel-control-prev" href="#demo"  data-slide="prev"> Prev </a>
-            <div class="carousel-indicators">
-                <span data-target="#demo" class="dot active" data-slide-to="0"></span>
-                <span data-target="#demo" class="dot" data-slide-to="1"></span>
-                <span data-target="#demo" class="dot" data-slide-to="2"></span>
-                <span data-target="#demo" class="dot" data-slide-to="3"></span>
-            </div>
-            <a class="carousel-control-next" href="#demo" data-slide="next"> Next </a>
+
+        <div class="carousel-item">
+            <!--                <img src="../../static/Images/mario.jpg">-->
+            <img th:src="@{Images/mario.jpg}">
+            <div class="carousel-caption first"> Tag: forest, mystical, gloomy</div>
+            <div class="carousel-caption second"> VIEW IMAGES</div>
         </div>
-    </header>
-
-    <main>
-        <div class="gallery" id="gallery" th:object="${allPosts}">
-            <div class="box" th:each="post: ${allPosts}">
-                <a th:href="@{/imagetab/{id}(id = ${post.postId})}">
-                    <img th:src="${post.urlSmall}" alt="">
-                </a>
-            </div>
+        <div class="carousel-item">
+            <!--                <img src="../../static/Images/kaysar.jpg">-->
+            <img th:src="@{Images/kaysar.jpg}">
+            <div class="carousel-caption first"> Tag: forest, mystical, gloomy</div>
+            <div class="carousel-caption second"> VIEW IMAGES</div>
         </div>
-    </main>
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <div class="carousel-item">
+            <!--                <img src="../../../../../../../../Downloads/main/Images/shawn.jpg">-->
+            <img th:src="@{Images/shawn.jpg}">
+            <div class="carousel-caption first"> Tag: forest, mystical, gloomy</div>
+            <div class="carousel-caption second"> VIEW IMAGES</div>
+        </div>
+    </div>
+    <!-- Indicators and Left/Right control buttons -->
+    <div class="pager">
+        <a class="carousel-control-prev" href="#demo" data-slide="prev"> Prev </a>
+        <div class="carousel-indicators">
+            <span data-target="#demo" class="dot active" data-slide-to="0"></span>
+            <span data-target="#demo" class="dot" data-slide-to="1"></span>
+            <span data-target="#demo" class="dot" data-slide-to="2"></span>
+            <span data-target="#demo" class="dot" data-slide-to="3"></span>
+        </div>
+        <a class="carousel-control-next" href="#demo" data-slide="next"> Next </a>
+    </div>
+</header>
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<main>
+    <div class="gallery" id="gallery" th:object="${allPosts}">
+        <div class="box" th:each="post: ${allPosts}">
+            <a th:href="@{/imagetab/{id}(id = ${post.postId})}">
+                <img th:src="${post.urlSmall}" alt="">
+            </a>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!--    <script src="../../../../../../../../Downloads/main/JS/homepage_script.js"></script>-->
-    <script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>
+
 </body>
 </html>

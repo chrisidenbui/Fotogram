@@ -1,4 +1,3 @@
-
 var image = document.querySelector('.img-fluid');
 
 async function downloadImage(imageSrc) {
@@ -16,11 +15,10 @@ async function downloadImage(imageSrc) {
 
 let download = document.querySelector('.img-fluid');
 download.addEventListener('click', function() {
-        console.log('1');
-        // console.log(image.getAttribute('th:src'));
-        // let path = image.getAttribute('src');
-        // let fileName = getFileName(path);
-        // saveAs(path,fileName);
+
+        let path = image.getAttribute('src');
+        let fileName = getFileName(path);
+        saveAs(path,fileName);
     }
 );
 
