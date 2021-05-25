@@ -23,7 +23,7 @@
     <main>
         <div class="gallery" id="gallery" th:object="${familyPosts}">
             <div class="box" th:each="post: ${familyPosts}">
-                <img th:src="${post.photoUrl}" alt="">
+                <img th:src="${post.urlSmall}" alt="">
             </div>
         </div>
     </main>
