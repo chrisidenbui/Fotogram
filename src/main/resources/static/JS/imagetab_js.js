@@ -1,18 +1,35 @@
 var open = document.getElementById('hamburger');
 var changeIcon = true;
-var post_id = 0;
-document.addEventListener('DOMContentLoaded', () => {
-    // const params = (new URL(document.location)).searchParams;
-    // let image_src = document.location.search.replace(/^.*?\=/,'')
-    // let main_image = document.querySelector('.image_tab > img');
-    // main_image.src = image_src
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    post_id = urlParams.get('id')
-    console.log(post_id)
-})
+var image = document.querySelector('.img-fluid');
 
-open.addEventListener("click", function(){
+async function downloadImage(imageSrc) {
+    const image = await fetch(imageSrc)
+    const imageBlog = await image.blob()
+    const imageURL = URL.createObjectURL(imageBlog)
+
+    const link = document.createElement('a')
+    link.href = imageURL
+    link.download = 'regular'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+}
+
+let download = document.querySelector('.img-fluid');
+download.addEventListener('click', function() {
+        console.log('1');
+        // console.log(image.getAttribute('th:src'));
+        // let path = image.getAttribute('src');
+        // let fileName = getFileName(path);
+        // saveAs(path,fileName);
+    }
+);
+
+function getFileName(str){
+    return str.substring(str.lastIndexOf('/') + 1);
+}
+
+open.addEventListener("click", function () {
 
     var overlay = document.querySelector('.overlay');
     var nav = document.querySelector('nav');
@@ -26,8 +43,7 @@ open.addEventListener("click", function(){
         icon.classList.add("fa-times");
 
         changeIcon = false;
-    }
-    else {
+    } else {
         icon.classList.remove("fa-times");
         icon.classList.add("fa-bars");
         changeIcon = true;

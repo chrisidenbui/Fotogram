@@ -7,11 +7,11 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("load", () => {
     //Function to open Image Pane
-    const all_post = document.querySelectorAll('.col > img');
-    openImageTab(all_post);
-
-    const all_carousel = document.querySelectorAll('.carousel-item > img');
-    openImageTab(all_carousel);
+    // const all_post = document.querySelectorAll('.col > img');
+    // openImageTab(all_post);
+    //
+    // const all_carousel = document.querySelectorAll('.carousel-item > img');
+    // openImageTab(all_carousel);
 })
 // Burger menu
 const burger = document.querySelector('.menu-button');

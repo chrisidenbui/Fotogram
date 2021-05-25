@@ -4,12 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import rmit.fotogram.model.Post;
 import rmit.fotogram.service.PostService;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomePageController {
@@ -23,13 +22,19 @@ public class HomePageController {
         return "html/homepage"; // --> homepage.html
     }
 
+//    @GetMapping("/imagetab")
+//    public String showImageTab () {
+//        return "html/imagetab";
+//    }
 
+    @GetMapping("/imagetab/{postID}")
+    public String openSpecidicTab (@PathVariable("postID") long postID, Model model)
+    {
+        Post post = postService.findById(postID);
 
-    @GetMapping("/imagetab")
-    public String showImageTab () {
+        model.addAttribute("specificPost", post);
         return "html/imagetab";
     }
-
     // add mapping for 'Animals' button
     @GetMapping("/animals")
     public String showAnimals(Model model) {
@@ -77,6 +82,7 @@ public class HomePageController {
         model.addAttribute("lovePosts", posts);
         return "html/love";
     }
+
 
     // add mapping for 'Collection' button
     @GetMapping("/collections")

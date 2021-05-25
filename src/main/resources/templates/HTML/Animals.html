@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
-
-<!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
-<!--    <link rel="stylesheet" href="/../CSS/homepage_style.css">-->
     <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
     <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}" />
     <title> Photographics - Animals </title>
@@ -23,7 +20,9 @@
     <main>
         <div class="gallery" id="gallery" th:object="${animalPosts}">
             <div class="box" th:each="post: ${animalPosts}">
-                <img th:src="${post.photoUrl}" alt="">
+                <a th:href="@{/imagetab/{id}(id = ${post.postId})}">
+                    <img th:src="${post.photoUrl}" alt="">
+                </a>
             </div>
         </div>
     </main>
@@ -36,6 +35,6 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!--    <script src="../../../../../../../../Downloads/main/JS/homepage_script.js"></script>-->
-    <script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>
+<!--    <script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>-->
 </body>
 </html>
