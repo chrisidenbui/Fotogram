@@ -6,31 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/CSS/imagetab_style.css}"/>
-    <link rel="stylesheet" th:href="@{/CSS/navbar.css}"/>
-
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/CSS/imagetab_style.css}" />
+    <!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
+<!--    <link rel="stylesheet" href="../CSS/imagetab_style.css">-->
 
     <title> Photographics - Image </title>
 </head>
 <body>
 
-<!-- Add nav-bar from 'HTML/layout.html' -->
-<nav th:replace="html/layout::fotogram-nav-bar"></nav>
-<main>
-    <div class="img-thumbnail" th:object="${specificPost}">
-        <img class="img-fluid" alt="Responsive image" th:src="${specificPost.urlFull}">
-    </div>
-    <a class="heart-icon"> Like </a>
-</main>
-<script type="text/javascript" th:src="@{JS/imagetab_script.js}"></script>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Add nav-bar from 'HTML/layout.html' -->
+    <nav th:replace="html/layout::fotogram-nav-bar"></nav>
+    <main>
+        <div class="image-info">
+            <h3 id="credit"> Photo by: </h3>
+            <h3 id="tag"> Tag: #night </h3>
+        </div>
+        <div class="img-thumbnail" th:object="${specificPost}">
+            <img class="img-fluid" alt="Responsive image" th:src="${specificPost.urlFull}">
+        </div>
+            <a class="heart-icon"> Like </a>
+            <button type="button" class="button">
+                <span class="button-text">Download</span>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" th:href="@{#}"> Original </a>
+                    <a class="dropdown-item" th:href="@{#}"> Small </a>
+                    <a class="dropdown-item" th:href="@{#}"> Medium </a>
+                    <a class="dropdown-item" th:href="@{#}"> Large </a>
+                </div>
+            </button>
+    </main>
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>
+    <script type="text/javascript" th:src="@{JS/imagetab_js.js}"></script>
 </body>
 </html>
