@@ -11,6 +11,7 @@ html {
     overflow: hidden;
     display: flex;
     align-items: center;
+    transition: .5s;
 }
 .carousel-item img {
     max-width: 100%;
@@ -80,56 +81,67 @@ html {
     background-color: white;
 }
 
-/* -----------Create four equal columns that sits next to each other------------- */
-.row {
-    display: flex;
-
+/* ---------------Arrange images and effect-------------- */
+.gallery {
+    position: relative;
+    column-count: 4;
+    height: 100%;
+    width: 100%;
+    padding: 0 130px;
+    transition: .5s;
 }
-.col {
-    flex: 15%;
-    max-width: 50%;
-}
-.row:first-child,
-.row:last-child { padding: 0 250px; }
-.col img {
-    margin-top: 20px;
-    vertical-align: middle;
+.box {
+    display: inline-grid;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    overflow: hidden;
     width: 100%;
     border-radius: 10px;
-    transition: 0.3s linear;
 }
-.col img:hover {
+.box img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+.box:hover img {
+    cursor: pointer;
     transform: scale(1.15);
     filter: brightness(0.7);
-    cursor: pointer;
-    z-index: 100;
 }
-
-/* Responsive layout - reduce columns by 1 after scaling the screen */
+/* -----------Responsive layout - reduce columns by 1 after scaling the screen---------- */
 @media screen and (min-width: 1001px) and (max-width: 1400px) {
-    .col {
-        flex: 30%;
-        max-width: 40%;
+    .carousel-inner {
+        height: 60vh;
+        transition: .5s;
     }
-    .row:first-child,
-    .row:first-child { padding: 0 80px; }
+    .gallery {
+        column-count: 3;
+        padding: 0 80px;
+        transition: .5s;
+    }
 }
 @media screen and (min-width: 701px) and (max-width: 1000px) {
-    .col {
-        flex: 50%;
-        max-width: 70%;
+    .carousel-inner {
+        height: 50vh;
+        transition: .5s;
     }
-    .row:first-child,
-    .row:last-child { padding: 0 50px; }
+    .gallery {
+        column-count: 2;
+        padding: 0 40px;
+        transition: .5s;
+    }
 }
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-    .col {
-        flex: 100%;
-        max-width: 100%;
+    .carousel-inner {
+        height: 50vh;
+        transition: .5s;
     }
-    .row:first-child,
-    .row:last-child { padding: 0 5px; }
+    .gallery {
+        column-count: 1;
+        padding: 0 10px;
+        transition: .5s;
+    }
 }
 
 

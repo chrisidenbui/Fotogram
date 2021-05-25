@@ -310,7 +310,7 @@ a { text-decoration: none !important; }
 }
 
 /* -----------------------Responsive for navbar components------------------------------- */
-@media screen and (min-width: 1221px) and (max-width: 1170px) {
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
     .search input:focus {
         font-size: 15px;
         height: 40px;
@@ -320,7 +320,7 @@ a { text-decoration: none !important; }
 }
 
 /* Responsive when screen width is 1220px max */
-@media screen and (min-width: 1081px) and (max-width: 1220px) {
+@media screen and (min-width: 701px) and (max-width: 1000px) {
     .max-width {
         padding: 15px 50px;
         transition: .3s;
@@ -349,12 +349,10 @@ a { text-decoration: none !important; }
         opacity: 1;
         font-size: 15px;
     }
-
 }
 
 /* Responsive when screen width is 1680px max */
-@media screen and (min-width: 500px) and (max-width: 1080px) {
-
+@media screen and (max-width: 700px) {
     /* Hide navmenu when burger menu exists */
     .nav-menu > .main-menu { display: none; }
     .menu-button {
@@ -397,4 +395,5 @@ a { text-decoration: none !important; }
     }
     .nav-menu.display > .main-menu { display: list-item; }
     .nav-menu.display > .main-menu a { font-size: 15px; }
+    .nav-bar .side-nav > .login-nav { display: none; }
 }
