@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,9 +22,7 @@
         <div class="img-thumbnail">
             <img class="img-fluid" alt="Responsive image" th:src="@{/Images/image.png}">
         </div>
-        <div class="icon-group">
-            <div class="heart-icon"> Like </div>
-        </div>
+        <a class="heart-icon"> Like </a>
     </main>
 
 <!--    <main>-->
@@ -54,7 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" th:src="@{JS/imagetab_js.js}"></script>
     <script type="text/javascript" th:src="@{JS/homepage_script.js}"></script>
+    <script type="text/javascript" th:src="@{JS/imagetab_js.js}"></script>
 </body>
 </html>
