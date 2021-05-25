@@ -18,8 +18,7 @@ public class ImagePost {
         this.description = description;
     }
 
-    public String getImg_src () {
-        return img_src;
+    public String getImg_src () {        return img_src;
     }
 
     public String[] getDownload_urls () {
