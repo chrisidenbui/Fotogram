@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
     <link rel="stylesheet" th:href="@{/CSS/imagetab_style.css}" />
-<!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
+    <!--    <link rel="stylesheet" href="../CSS/navbar.css">-->
 <!--    <link rel="stylesheet" href="../CSS/imagetab_style.css">-->
 
     <title> Photographics - Image </title>
@@ -19,37 +19,39 @@
     <!-- Add nav-bar from 'HTML/layout.html' -->
     <nav th:replace="html/layout::fotogram-nav-bar"></nav>
     <main>
-        <div class="image-info">
-            <h3 class="left" id="credit">Photo by:</h3>
-            <h3 class="left" id="description">Photo description:</h3>
-            <h3 class="left" id="tag">Tag: #night</h3>
+        <div class="img-thumbnail">
+            <img class="img-fluid" alt="Responsive image" th:src="@{/Images/image.png}">
         </div>
-        <div class="row justify-content-end">
-            <div class="col-xl-auto">
-                <img class="img-fluid" alt="Responsive image" th:src="@{/Images/image.png}">
-            </div>
-        </div>
-        <div class="carousel">
-            <a class="carousel-control-prev-icon" href="" data-slide="prev"></a>
-            <a class="carousel-control-next-icon" href="" data-slide="next"></a>
-
-        </div>
-        <div class="container-icon">
-            <div class="heart-icon">
-                <svg viewBox="-8 -28 530 521" xmlns="http://www.w3.org/2000/svg"><path d="m471.382812 44.578125c-26.503906-28.746094-62.871093-44.578125-102.410156-44.578125-29.554687 0-56.621094 9.34375-80.449218 27.769531-12.023438 9.300781-22.917969 20.679688-32.523438 33.960938-9.601562-13.277344-20.5-24.660157-32.527344-33.960938-23.824218-18.425781-50.890625-27.769531-80.445312-27.769531-39.539063 0-75.910156 15.832031-102.414063 44.578125-26.1875 28.410156-40.613281 67.222656-40.613281 109.292969 0 43.300781 16.136719 82.9375 50.78125 124.742187 30.992188 37.394531 75.535156 75.355469 127.117188 119.3125 17.613281 15.011719 37.578124 32.027344 58.308593 50.152344 5.476563 4.796875 12.503907 7.4375 19.792969 7.4375 7.285156 0 14.316406-2.640625 19.785156-7.429687 20.730469-18.128907 40.707032-35.152344 58.328125-50.171876 51.574219-43.949218 96.117188-81.90625 127.109375-119.304687 34.644532-41.800781 50.777344-81.4375 50.777344-124.742187 0-42.066407-14.425781-80.878907-40.617188-109.289063zm0 0"/></svg>
-            </div>
-            <div class="download-icon">
-                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="Solid"><path d="m239.029 384.97a24 24 0 0 0 33.942 0l90.509-90.509a24 24 0 0 0 0-33.941 24 24 0 0 0 -33.941 0l-49.539 49.539v-262.059a24 24 0 0 0 -48 0v262.059l-49.539-49.539a24 24 0 0 0 -33.941 0 24 24 0 0 0 0 33.941z"/><path d="m464 232a24 24 0 0 0 -24 24v184h-368v-184a24 24 0 0 0 -48 0v192a40 40 0 0 0 40 40h384a40 40 0 0 0 40-40v-192a24 24 0 0 0 -24-24z"/></g></svg>
-            </div>
+        <div class="icon-group">
+            <div class="heart-icon"> Like </div>
         </div>
     </main>
 
+<!--    <main>-->
+<!--        <div class="image-info">-->
+<!--            <h3 class="left" id="credit">Photo by:</h3>-->
+<!--            <h3 class="left" id="description">Photo description:</h3>-->
+<!--            <h3 class="left" id="tag">Tag: #night</h3>-->
+<!--        </div>-->
+<!--        <div class="row justify-content-end">-->
+<!--            <div class="col-sm-auto">-->
+<!--                <img class="img-fluid" alt="Responsive image" th:src="@{/Images/image.png}">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="carousel">-->
+<!--            <a class="carousel-control-prev-icon" th:href="@{#}" data-slide="prev"></a>-->
+<!--            <a class="carousel-control-next-icon" th:href="@{#}" data-slide="next"></a>-->
+<!--        </div>-->
+<!--        <div class="icon">-->
+<!--            <div class="heart-icon"><a>Like</a></div>-->
+<!--            <button class="download-icon"><a>Like</a></button>-->
+<!--        </div>-->
+<!--    </main>-->
+
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" th:src="@{JS/imagetab_js.js}"></script>

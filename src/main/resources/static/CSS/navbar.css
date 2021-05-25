@@ -43,8 +43,6 @@ a { text-decoration: none !important; }
     font-size: 30px;
     /* font-weight: 600; */
     font-family: 'Special Elite', cursive;
-    /* font-family: 'Nosifer', cursive; */
-    /* font-family: 'Fredericka the Great', cursive; */
     transition: .3s;
 }
 .logo a::before {
@@ -140,33 +138,6 @@ a { text-decoration: none !important; }
     bottom: -5px;
 }
 
-/* -------------------Decor dropdown button--------------------------- */
-/*.dropdown {*/
-/*    position: absolute;*/
-/*    background-color: black;*/
-/*    display: none;*/
-/*}*/
-/*.dropdown li {*/
-/*    width: fit-content;*/
-/*    display: list-item;*/
-/*    display: block;*/
-/*    text-decoration: none;*/
-/*}*/
-/*.dropdown li a {*/
-/*    color: lightgray;*/
-/*    font-family: 'Amatic SC', cursive;*/
-/*    font-size: 20px;*/
-/*    line-height: 30px;*/
-/*    transition: 0.3s;*/
-/*}*/
-/*.nav-menu li:hover .dropdown {*/
-/*    box-shadow: 0 0 5px rgb(0, 0, 0);*/
-/*    display: block;*/
-/*}*/
-/*.dropdown li a:hover {*/
-/*    background-color: transparent !important;*/
-/*    color: white;*/
-/*}*/
 /* -----------------Search bar and icon------------------------- */
 .search {
     display: inline-block;
@@ -193,11 +164,11 @@ a { text-decoration: none !important; }
 .search #holder {
     position: absolute;
     background-color: lightgray;
-    height: 12px;
+    height: 10px;
     width: 2px;
     transform: rotate(-50deg);
     right: -1px;
-    bottom: -5px
+    bottom: -3px;
 }
 .search input::placeholder { opacity: 0; }
 .search input:focus::placeholder {
@@ -310,7 +281,7 @@ a { text-decoration: none !important; }
 }
 
 /* -----------------------Responsive for navbar components------------------------------- */
-@media screen and (min-width: 1001px) and (max-width: 1400px) {
+@media screen and (min-width: 1201px) and (max-width: 1500px) {
     .search input:focus {
         font-size: 15px;
         height: 40px;
@@ -318,9 +289,9 @@ a { text-decoration: none !important; }
         transition: .3s;
     }
 }
-
-/* Responsive when screen width is 1220px max */
-@media screen and (min-width: 701px) and (max-width: 1000px) {
+/* Responsive when screen width is 1200px max */
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+    .nav-menu > .main-menu { display: none; }
     .max-width {
         padding: 15px 50px;
         transition: .3s;
@@ -349,12 +320,6 @@ a { text-decoration: none !important; }
         opacity: 1;
         font-size: 15px;
     }
-}
-
-/* Responsive when screen width is 1680px max */
-@media screen and (max-width: 700px) {
-    /* Hide navmenu when burger menu exists */
-    .nav-menu > .main-menu { display: none; }
     .menu-button {
         display: inline-flex;
         padding: 10px;
@@ -364,7 +329,6 @@ a { text-decoration: none !important; }
     .menu-button:hover > .burger div {
         background-color: white;
     }
-
     /* Open burger menu, display menu cancel button */
     .menu-button.open { padding: 10px; }
     .menu-button.open #line2 {
@@ -381,7 +345,58 @@ a { text-decoration: none !important; }
         background-color: white;
         transform: rotate(45deg) translate(0, -10px);
     }
+    /* Show navmenu when click on burger menu */
+    .nav-menu.display {
+        position: fixed;
+        text-align: center;
+        background-color: black;
+        padding: 15px 50px;
+        height: fit-content;
+        top: 50px;
+        right: 80px;
+        transition: .5s;
+    }
+    .nav-menu.display > .main-menu { display: list-item; }
+    .nav-menu.display > .main-menu a { font-size: 15px; }
+}
 
+/* Responsive when screen width is 700px max */
+@media screen and (max-width: 700px) {
+    /* Hide navmenu when burger menu exists */
+    .nav-menu > .main-menu { display: none; }
+    .max-width {
+        padding: 10px 20px;
+        transition: .3s;
+    }
+    .menu-button {
+        display: inline-flex;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .burger div { display: block; }
+    .menu-button:hover > .burger div {
+        background-color: white;
+    }
+    .logo a {
+        font-size: 20px;
+        transition: .3s;
+    }
+    /* Open burger menu, display menu cancel button */
+    .menu-button.open { padding: 10px; }
+    .menu-button.open #line2 {
+        transform: translateX(50px);
+        background: transparent;
+    }
+    .menu-button.open #line1 {
+        width: 30px;
+        background-color: white;
+        transform: rotate(-45deg) translate(7px, 3px);
+    }
+    .menu-button.open #line3 {
+        width: 30px;
+        background-color: white;
+        transform: rotate(45deg) translate(0, -10px);
+    }
     /* Show navmenu when click on burger menu */
     .nav-menu.display {
         position: fixed;
@@ -396,4 +411,26 @@ a { text-decoration: none !important; }
     .nav-menu.display > .main-menu { display: list-item; }
     .nav-menu.display > .main-menu a { font-size: 15px; }
     .nav-bar .side-nav > .login-nav { display: none; }
+    .search input {
+        font-size: 20px;
+        height: 25px;
+        width: 15px;
+        /*padding: 0 0 0 15px;*/
+    }
+    .search input:focus {
+        font-size: 15px;
+        height: 30px;
+        width: 200px;
+        transition: .5s;
+    }
+    .search #holder {
+        height: 8px;
+        width: 2px;
+        right: 0;
+        bottom: 1px;
+    }
+    .search input:focus::placeholder {
+        opacity: 1;
+        font-size: 15px;
+    }
 }
