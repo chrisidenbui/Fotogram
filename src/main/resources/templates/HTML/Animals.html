@@ -12,7 +12,6 @@
 <!--    <link rel="stylesheet" href="/../CSS/homepage_style.css">-->
     <link rel="stylesheet" th:href="@{/CSS/navbar.css}" />
     <link rel="stylesheet" th:href="@{/CSS/homepage_style.css}" />
-
     <title> Photographics - Animals </title>
 </head>
 <body>
@@ -23,7 +22,6 @@
 
     <main>
         <div class="gallery" id="gallery" th:object="${animalPosts}">
-
             <div class="box" th:each="post: ${animalPosts}">
                 <img th:src="${post.photoUrl}" alt="">
             </div>

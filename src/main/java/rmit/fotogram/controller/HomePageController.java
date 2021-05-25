@@ -23,6 +23,13 @@ public class HomePageController {
         return "html/homepage"; // --> homepage.html
     }
 
+
+
+    @GetMapping("/imagetab")
+    public String showImageTab () {
+        return "html/imagetab";
+    }
+
     // add mapping for 'Animals' button
     @GetMapping("/animals")
     public String showAnimals(Model model) {
@@ -71,12 +78,6 @@ public class HomePageController {
         return "html/love";
     }
 
-    // add mapping for 'Images' button
-    @GetMapping("/imagetab")
-    public String showImageTab () {
-        return "html/imagetab";
-    }
-
     // add mapping for 'Collection' button
     @GetMapping("/collections")
     public String showCollections() {
@@ -94,7 +95,5 @@ public class HomePageController {
     public String showPhotos() {
         return "html/aboutus";
     }
-
-
 
 }

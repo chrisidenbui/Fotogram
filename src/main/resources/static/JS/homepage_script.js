@@ -81,7 +81,7 @@ fetch('http://localhost:8080/posts')
 function openImageTab(all) {
     for (let a = 0; a < all.length; a++) {
         all[a].addEventListener('click', () =>{
-            window.location = './imagetab?id=' + a;
+             window.location = './imagetab?id=' + a;
         })
     }
 }

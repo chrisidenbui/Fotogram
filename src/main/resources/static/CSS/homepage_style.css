@@ -93,6 +93,7 @@ html {
 }
 
 
+
 @media screen and (min-width: 1001px) and (max-width: 1280px) {
     .col {
         flex: 50%;
