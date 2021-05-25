@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class BindKey implements Serializable {
+public class    BindKey implements Serializable {
     
     @Column(name = "post_id")
     private Long postId;

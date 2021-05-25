@@ -1,17 +1,5 @@
 var image = document.querySelector('.img-fluid');
 
-async function downloadImage(imageSrc) {
-    const image = await fetch(imageSrc)
-    const imageBlog = await image.blob()
-    const imageURL = URL.createObjectURL(imageBlog)
-
-    const link = document.createElement('a')
-    link.href = imageURL
-    link.download = 'regular'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-}
 
 let download = document.querySelector('.img-fluid');
 download.addEventListener('click', function() {
