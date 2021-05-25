@@ -59,7 +59,9 @@
     <main>
         <div class="gallery" id="gallery" th:object="${allPosts}">
             <div class="box" th:each="post: ${allPosts}">
-                <img th:src="${post.urlSmall}" alt="">
+                <a th:href="@{/imagetab/{id}(id = ${post.postId})}">
+                    <img th:src="${post.urlSmall}" alt="">
+                </a>
             </div>
         </div>
     </main>

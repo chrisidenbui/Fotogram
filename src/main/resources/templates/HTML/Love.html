@@ -25,9 +25,9 @@
 
             <div class="box" th:each="post: ${lovePosts}">
                 <a th:href="@{/imagetab/{id}(id = ${post.postId})}">
-                    <img th:src="${post.photoUrl}" alt="">
+                    <img th:src="${post.urlSmall}" alt="">
                 </a>
-                <img th:src="${post.urlSmall}" alt="">
+
             </div>
         </div>
     </main>
