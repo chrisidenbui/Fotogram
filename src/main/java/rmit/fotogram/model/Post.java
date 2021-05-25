@@ -15,8 +15,20 @@ public class Post {
     @Column(name = "post_id")
     private Long postId;
         
-    @Column(name = "photo_url")
-    private String photoUrl;
+    @Column(name = "url_full")
+    private String urlFull;
+
+    @Column(name = "url_raw")
+    private String urlRaw;
+
+    @Column(name = "url_regular")
+    private String urlRegular;
+
+    @Column(name = "url_small")
+    private String urlSmall;
+
+    @Column(name = "url_thumb")
+    private String urlThumb;
     
     @Column(name = "creation_date")
     private Timestamp createdDate;
@@ -29,7 +41,7 @@ public class Post {
             fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")   // 'user_id' is a column of table 'Post'.
     private User postedUser;
-    
+
     // Post and Likes
     @OneToMany(mappedBy = "likeAtPost",
             fetch = FetchType.LAZY)       // 'likeAtPost' is the property of 'Likes' class.
@@ -52,8 +64,12 @@ public class Post {
         // default constructor
     }
 
-    public Post(String photoUrl, Timestamp createdDate, String photoLocation) {
-        this.photoUrl = photoUrl;
+    public Post (String urlFull, String urlRaw, String urlRegular, String urlSmall, String urlThumb, Timestamp createdDate, String photoLocation) {
+        this.urlFull = urlFull;
+        this.urlRaw = urlRaw;
+        this.urlRegular = urlRegular;
+        this.urlSmall = urlSmall;
+        this.urlThumb = urlThumb;
         this.createdDate = createdDate;
         this.photoLocation = photoLocation;
     }
@@ -67,12 +83,44 @@ public class Post {
         this.postId = postId;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getUrlFull () {
+        return urlFull;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setUrlFull (String urlFull) {
+        this.urlFull = urlFull;
+    }
+
+    public String getUrlRaw () {
+        return urlRaw;
+    }
+
+    public void setUrlRaw (String urlRaw) {
+        this.urlRaw = urlRaw;
+    }
+
+    public String getUrlRegular () {
+        return urlRegular;
+    }
+
+    public void setUrlRegular (String urlRegular) {
+        this.urlRegular = urlRegular;
+    }
+
+    public String getUrlSmall () {
+        return urlSmall;
+    }
+
+    public void setUrlSmall (String urlSmall) {
+        this.urlSmall = urlSmall;
+    }
+
+    public String getUrlThumb () {
+        return urlThumb;
+    }
+
+    public void setUrlThumb (String urlThumb) {
+        this.urlThumb = urlThumb;
     }
 
     public Timestamp getCreatedDate() {
@@ -131,10 +179,14 @@ public class Post {
     }
 
     @Override
-    public String toString() {
+    public String toString () {
         return "Post{" +
                 "postId=" + postId +
-                ", photoUrl='" + photoUrl + '\'' +
+                ", urlFull='" + urlFull + '\'' +
+                ", urlRaw='" + urlRaw + '\'' +
+                ", urlRegular='" + urlRegular + '\'' +
+                ", urlSmall='" + urlSmall + '\'' +
+                ", urlThumb='" + urlThumb + '\'' +
                 ", createdDate=" + createdDate +
                 ", photoLocation='" + photoLocation + '\'' +
                 ", postedUser=" + postedUser +
