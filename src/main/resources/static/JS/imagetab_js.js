@@ -1,5 +1,4 @@
-var open = document.getElementById('hamburger');
-var changeIcon = true;
+
 var image = document.querySelector('.img-fluid');
 
 async function downloadImage(imageSrc) {
@@ -29,23 +28,14 @@ function getFileName(str){
     return str.substring(str.lastIndexOf('/') + 1);
 }
 
-open.addEventListener("click", function () {
-
-    var overlay = document.querySelector('.overlay');
-    var nav = document.querySelector('nav');
-    var icon = document.querySelector('.menu-toggle i');
-
-    overlay.classList.toggle("menu-open");
-    nav.classList.toggle("menu-open");
-
-    if (changeIcon) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-
-        changeIcon = false;
+const heart_like = document.querySelector('.heart-icon');
+let heart_click = false;
+heart_like.addEventListener('click', () => {
+    if (!heart_click) {
+        heart_like.classList.add('liked');
+        heart_click = true;
     } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-        changeIcon = true;
+        heart_like.classList.remove('liked');
+        heart_click = false;
     }
-});
+})
