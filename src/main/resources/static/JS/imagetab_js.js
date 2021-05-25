@@ -9,3 +9,4 @@ heart_like.addEventListener('click', () => {
         heart_click = false;
     }
 })
+

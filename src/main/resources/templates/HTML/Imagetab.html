@@ -19,11 +19,24 @@
     <!-- Add nav-bar from 'HTML/layout.html' -->
     <nav th:replace="html/layout::fotogram-nav-bar"></nav>
     <main>
+        <div class="image-info">
+            <h3 id="credit"> Photo by: </h3>
+            <h3 id="tag"> Tag: #night </h3>
+        </div>
         <div class="img-thumbnail">
-            <img class="img-fluid" alt="Responsive image" th:src="@{/Images/image.png}">
+<!--            <img class="img-fluid" alt="Responsive image" th:src="@{/Images/image.png}">-->
+            <img class="img-fluid" alt="Responsive image" th:src="@{/Images/anna-bratiychuk-HGMRCsRawyM-unsplash.jpg}">
         </div>
             <a class="heart-icon"> Like </a>
-            <button><i class=" fa fa-download" aria-hidden="true"></i></button>
+            <button type="button" class="button">
+                <span class="button-text">Download</span>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" th:href="@{#}"> Original </a>
+                    <a class="dropdown-item" th:href="@{#}"> Small </a>
+                    <a class="dropdown-item" th:href="@{#}"> Medium </a>
+                    <a class="dropdown-item" th:href="@{#}"> Large </a>
+                </div>
+            </button>
     </main>
 
     <!-- jQuery library -->
