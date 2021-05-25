@@ -25,7 +25,7 @@
         <div class="gallery" id="gallery" th:object="${animalPosts}">
 
             <div class="box" th:each="post: ${animalPosts}">
-                <img th:src="${post.photoUrl}" alt="">
+                <img th:src="${post.urlSmall}" alt="">
             </div>
         </div>
     </main>

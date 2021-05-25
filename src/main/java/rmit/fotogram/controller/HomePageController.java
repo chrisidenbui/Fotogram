@@ -17,7 +17,9 @@ public class HomePageController {
 
     // add mapping for 'Home' button
     @GetMapping("/home")
-    public String showHomePage() {
+    public String showHomePage(Model model) {
+        List<Post> posts = postService.findAll();
+        model.addAttribute ("allPosts", posts);
         return "html/homepage"; // --> homepage.html
     }
 
